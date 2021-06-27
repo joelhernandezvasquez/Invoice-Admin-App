@@ -1,0 +1,10 @@
+
+@import 'base/typography';
+@import 'base/reset';
+@import 'layout/home';
+
+body{
+    font-family: $primary-font;
+    font-weight: 700;
+   
+}
