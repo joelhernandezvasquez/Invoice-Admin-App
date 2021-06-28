@@ -1,6 +1,9 @@
 
 @import '../abstracts/colors';
 @import '../utilities/line';
+@import '../utilities/container';
+@import '../utilities/logo';
+@import '../components/nav-bar';
 
 .home-page-wrapper{
    background:$dark-blue-bg;
@@ -13,7 +16,7 @@
     height:559px;
     background: linear-gradient(123.29deg, rgba(136, 66, 251, 0) 8.03%, rgba(213, 93, 250, 0.32) 73.62%, #FF6BF9 99.7%);
      transform:rotate(60deg);
-    position:relative;
+    position:absolute;
     top:-160px;
     left:50px;
 
