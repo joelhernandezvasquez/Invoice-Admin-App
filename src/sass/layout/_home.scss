@@ -1,9 +1,11 @@
 
 @import '../abstracts/colors';
+@import '../abstracts/variables';
 @import '../utilities/line';
 @import '../utilities/container';
 @import '../utilities/logo';
 @import '../components/nav-bar';
+
 
 .home-page-wrapper{
    background:$dark-blue-bg;
@@ -25,14 +27,53 @@
         transform: rotate(90deg);
         position: absolute;
          top:360px;
-        right:50px;
+        right:60px;
+        z-index: 1;
        
     }
     & :nth-child(2).upper-line{
         width:200px;
         top:400px;
-        left:50px;
-        
+        left:50px; 
+        z-index: 1; 
     }
   
+}
+.hero-section{
+    border:1px solid red;
+    margin-top: var(--top-spacing);
+    position:relative;
+    
+    .hero-img-container{
+       .hero-img{
+          object-fit: cover;
+       }
+    }
+
+    .bottom-line{
+      width:500px;
+      position:absolute;
+      top:350px;
+      left:-50px;
+      transform: rotate(-27.1deg);
+      z-index: 1;
+    }
+
+    .hero-content{
+        margin-top:3rem;
+        border:1px solid red;
+        
+        h1{
+            font-size: var(--fs-h1);
+            color:$pure-white;
+            
+        }
+    }
+}
+
+.bg-hero-shape{
+ position: absolute;
+ top:150px;
+ right:0;
+ 
 }
