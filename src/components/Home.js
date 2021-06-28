@@ -5,8 +5,9 @@ const Home = () => {
         <section className="home-page-wrapper">
             <div className="graphic-bg">
                 <div className="upper-line line"></div>
-                
+                <div className="upper-line line"></div> 
             </div>
+           
         </section>
     )
 }

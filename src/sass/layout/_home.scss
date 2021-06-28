@@ -9,7 +9,6 @@
 }
 
 .graphic-bg{
-   
     width:240px;
     height:559px;
     background: linear-gradient(123.29deg, rgba(136, 66, 251, 0) 8.03%, rgba(213, 93, 250, 0.32) 73.62%, #FF6BF9 99.7%);
@@ -19,14 +18,18 @@
     left:50px;
 
     .upper-line{
-        width: 208px;
-        height: 1px;
+        width: 200px;
         transform: rotate(90deg);
         position: absolute;
          top:360px;
+        right:50px;
        
-
-       
+    }
+    & :nth-child(2).upper-line{
+        width:200px;
+        top:400px;
+        left:50px;
+        
     }
   
 }
