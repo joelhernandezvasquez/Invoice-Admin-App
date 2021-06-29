@@ -1,0 +1,25 @@
+
+@import '../abstracts/colors';
+@import '../abstracts/variables';
+@import '../base/typography';
+
+.btn{
+    padding:0.8rem 2rem;
+    border-radius: 40px;
+    border:none;
+    cursor: pointer;
+    
+}
+
+.btn-primary{
+    background:$light-orange;
+    color:$pure-white;
+    font-size: var(--fs-btn);
+    font-family: $secondary-font;
+    font-weight: 500;
+    transition: background 0.3s ease-out;
+
+    &:hover{
+      background:rgba($light-orange, 0.8);
+    }
+}

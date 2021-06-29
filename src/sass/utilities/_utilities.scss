@@ -1,0 +1,14 @@
+
+@import "../abstracts/variables";
+@import "../base/typography";
+
+.leading-text{
+    font-size:var(--fs-text);
+    color:$light-white;
+    font-weight: $fw-400;
+    line-height: 1.5rem;
+}
+
+.text-center{
+    text-align: center;
+}

@@ -3,13 +3,14 @@
 @import '../abstracts/variables';
 @import '../utilities/line';
 @import '../utilities/container';
+@import '../utilities//utilities';
 @import '../utilities/logo';
 @import '../components/nav-bar';
+@import '../components/buttons';
 
 
 .home-page-wrapper{
    background:$dark-blue-bg;
-   height: 100vh;
    position: relative;
 }
 
@@ -40,16 +41,15 @@
   
 }
 .hero-section{
-    border:1px solid red;
     margin-top: var(--top-spacing);
     position:relative;
+    height:100vh;
     
     .hero-img-container{
        .hero-img{
           object-fit: cover;
        }
     }
-
     .bottom-line{
       width:500px;
       position:absolute;
@@ -60,13 +60,29 @@
     }
 
     .hero-content{
-        margin-top:3rem;
-        border:1px solid red;
-        
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:2rem;
+        position: relative;
+        z-index: 2;
         h1{
             font-size: var(--fs-h1);
             color:$pure-white;
+            text-align: center;
+            font-weight: 900;
+            line-height: var(--heading-line-height);   
+        }
+        span{
+            color:$light-orange;
+        }
+        
+        .text{
+            margin-top: 1rem;
             
+        }
+       .btn
+       { margin-top: 1.5rem;
         }
     }
 }
