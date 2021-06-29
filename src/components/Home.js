@@ -31,6 +31,7 @@ const Home = () => {
                    <img className="bg-hero-shape" src={BG} alt="shape background" />
                     <div className="bottom-line line"></div>
                 </div> 
+              
                
            
         </section>
