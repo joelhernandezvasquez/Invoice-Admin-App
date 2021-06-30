@@ -11,6 +11,22 @@
     
 }
 
+.btn-default{
+  background:none;
+  color: $pure-white;
+  font-size: var(--fs-btn);
+    font-family: $secondary-font;
+    font-weight: 500;
+   border:1px solid $light-orange;
+   transition: all 0.2s ease-in-out;
+
+   &:hover{
+    background:$light-orange;
+   
+   }
+
+}
+
 .btn-primary{
     background:$light-orange;
     color:$pure-white;
@@ -23,3 +39,4 @@
       background:rgba($light-orange, 0.8);
     }
 }
+

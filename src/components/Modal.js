@@ -5,7 +5,7 @@ const Modal = (props) => {
  return ReactDom.createPortal(
    
    <div className={`modal ${props.modalStyle}`}>
-    
+     <div>{props.content}</div>
    </div>,
    document.querySelector('#modal')
  )

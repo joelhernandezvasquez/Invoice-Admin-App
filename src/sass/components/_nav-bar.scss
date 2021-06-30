@@ -21,6 +21,32 @@
 
 }
 
+.mobile-menu{
+   margin:var(--top-spacing) 0;
+    
+   .item{
+       margin:1.5rem 0;
+   }
+   .links{
+        color:$pure-white;
+        font-size:1.125rem;
+        font-weight: 400;
+         transition:0.2s ease-in-out;
+        &:hover{
+            color:$light-orange;
+        }
+    }   
+}
+.auth-btn-container{
+    border-top: 1px solid rgba($pure-white,0.2);
+    padding:1rem 0;
+    @extend %flex-center;
+
+    & > *{
+        margin:0 10px;
+    }
+}
+
 .bar{
     width:1.5rem;
     height:1.88px;
