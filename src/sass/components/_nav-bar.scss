@@ -18,6 +18,33 @@
        font-size: 1.8rem;
        color:$pure-white;
     }
+
 }
+
+.bar{
+    width:1.5rem;
+    height:1.88px;
+    background:$pure-white;
+    border-radius: 5px;
+}
+
+:is(.bar1,.bar3){
+   transition:all 0.2s cubic-bezier(0.04, 0.04, 0.12, 0.96) .1008s;
+}
+
+.bar2{
+    width:18px;
+    align-self: flex-end;
+}
+
+.close-bar.bar1{
+    position:absolute;
+    transform:rotate(-45deg);
+  }
+  
+  .close-bar.bar3{
+    position:absolute;
+    transform :rotate(45deg);
+    }
 
 

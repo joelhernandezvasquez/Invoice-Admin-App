@@ -1,24 +1,30 @@
 import React,{useState} from 'react';
 import Modal from './Modal';
 import logoIcon from '../assets/images/logo.svg';
-import menuIcon from '../assets/images/hamburgerMenuIcon.svg';
 
 const NavBar = () => {
     
   const [isMenuOpen,setIsMenuOpen] = useState(false);
 
    const renderMenuIcon = () =>{
-     
+    
     if(!isMenuOpen) 
      {
        return(
-        <img className="menu-icon" src={menuIcon} alt="menu icon"/>
+            <>
+            <div className="bar bar1"></div>
+           <div className="bar bar2"></div> 
+            <div className="bar bar3"></div> 
+            </> 
        )
      }
 
      else{
        return(
-        <i className="fa fa-times icon-close " aria-hidden="true"></i>
+         <>
+         <div className="bar bar1 close-bar"></div>
+         <div className="bar bar3 close-bar"></div> 
+         </>
        )
      }
    }
@@ -31,10 +37,8 @@ const NavBar = () => {
              <div className="menu-icon-container" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {renderMenuIcon()}
              </div>
-             {isMenuOpen && (<Modal modalStyle ="nav-bar-modal"/>)}
+             <Modal modalStyle = {`nav-bar-modal ${isMenuOpen? 'active':'null'}`}/>
            </div>
-
-           
         </nav>
     )
 }
