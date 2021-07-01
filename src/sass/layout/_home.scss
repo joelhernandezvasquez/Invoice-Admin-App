@@ -44,7 +44,7 @@
 .hero-section{
     margin-top: var(--top-spacing);
     position:relative;
-    height:100vh;
+    height:700px;
     
     .hero-img-container{
        .hero-img{
@@ -93,4 +93,14 @@
  top:150px;
  right:0;
  
+}
+
+.features-section{
+    border:1px solid red;
+    margin:var(--top-spacing) 0;
+    height:600px;
+
+    .features-subheading{
+        margin:var(--top-spacing) 0;
+    }
 }

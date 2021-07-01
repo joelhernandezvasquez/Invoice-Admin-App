@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar';
+import Features from './Features';
 import HeroImage from '../assets/images/hero.svg';
 import BG from '../assets/images/Bg.svg';
 
@@ -31,9 +32,11 @@ const Home = () => {
                    <img className="bg-hero-shape" src={BG} alt="shape background" />
                     <div className="bottom-line line"></div>
                 </div> 
+
+                <Features/>
               
                
-           
+
         </section>
     )
 }
