@@ -12,7 +12,7 @@ const NavBar = () => {
        return(
             <>
             <div className="bar bar1"></div>
-           <div className="bar bar2"></div> 
+            <div className="bar bar2"></div> 
             <div className="bar bar3"></div> 
             </> 
        )
@@ -31,7 +31,8 @@ const NavBar = () => {
    const renderContent = () =>{
       return(
         <div className="container">
-          <ul className="mobile-menu">
+          <ul className={`mobile-menu ${isMenuOpen? 'open':'null'}`}>
+             
              <li className="item">
                <a href="#" className="links">Home</a>
              </li>
@@ -41,7 +42,7 @@ const NavBar = () => {
              </li>
 
              <li className="item">
-               <a href="#" className="links">Feature</a>
+               <a href="#" className="links">Features</a>
              </li>
 
              <li className="item">
@@ -51,11 +52,14 @@ const NavBar = () => {
              <li className="item">
                <a href="#" className="links">Contact</a>
              </li>
+
+             <div className="auth-btn-container">
+                <button className="btn btn-default"> Sign in </button> 
+                <button className="btn btn-primary"> Sign up </button> 
+           </div>
+           
           </ul>
-          <div className="auth-btn-container">
-          <button className="btn btn-default"> Sign in </button> 
-          <button className="btn btn-primary"> Sign up </button> 
-          </div>
+         
         </div>
       )
    }
@@ -75,5 +79,4 @@ const NavBar = () => {
         </nav>
     )
 }
-
 export default NavBar;
