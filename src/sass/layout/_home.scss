@@ -8,6 +8,7 @@
 @import '../components/nav-bar';
 @import '../components/buttons';
 @import '../components/modal';
+@import '../components/feature-card';
 
 
 .home-page-wrapper{
@@ -44,7 +45,7 @@
 .hero-section{
     margin-top: var(--top-spacing);
     position:relative;
-    height:700px;
+    height:680px;
     
     .hero-img-container{
        .hero-img{
@@ -96,11 +97,15 @@
 }
 
 .features-section{
-    border:1px solid red;
+    //border:1px solid red;
     margin:var(--top-spacing) 0;
-    height:600px;
 
     .features-subheading{
         margin:var(--top-spacing) 0;
+    }
+    .features-card-container{
+       display:grid;
+       grid-template-columns:repeat(auto-fit,minmax(20.25rem,1fr));
+       gap:1rem;
     }
 }
