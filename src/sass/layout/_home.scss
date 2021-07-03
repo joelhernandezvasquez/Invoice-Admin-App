@@ -109,5 +109,21 @@
 }
 
 .about-section{
-    border:1px solid red;
+    margin:var(--top-spacing) 0;
+    padding:5rem 0; 
+   
+    .container{
+        @extend %flex-align-center-vertical;
+
+        .description-container{
+            @extend %flex-align-center-vertical;
+            margin-top: 4rem;
+
+            & > *{
+                margin:0.7rem 0;
+            }
+        }
+    }
+
+   
 }

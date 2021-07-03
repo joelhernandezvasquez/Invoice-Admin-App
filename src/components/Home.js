@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar';
 import Features from './Features';
+import About from './About';
 import HeroImage from '../assets/images/hero.svg';
 import BG from '../assets/images/Bg.svg';
 
@@ -34,6 +35,7 @@ const Home = () => {
                 </div> 
 
                 <Features/>
+                <About/>
               
                
 
