@@ -97,9 +97,7 @@
 }
 
 .features-section{
-    //border:1px solid red;
     margin:var(--top-spacing) 0;
-
     .features-subheading{
         margin:var(--top-spacing) 0;
     }
@@ -108,4 +106,8 @@
        grid-template-columns:repeat(auto-fit,minmax(20.25rem,1fr));
        gap:1rem;
     }
+}
+
+.about-section{
+    border:1px solid red;
 }
