@@ -151,7 +151,31 @@
                 z-index: 1;
             }
         }
-    }
+    }  
+}
 
-   
+.feature-B-section{
+    padding:2rem 0;
+    .featureB-header{
+        img{
+            width: 100%;
+        }
+    }
+    .featureB-content-container{
+        margin-top: 3rem;
+
+        .header-content{
+            .leading-text{
+                margin-top: var(--top-spacing);
+            }
+        }
+       :is(.featureA-content,featureB-content)
+        {
+          margin-top: var(--top-spacing);
+        }
+        button{
+            display:block;
+            margin:var(--top-spacing) auto;
+        }
+    }
 }
