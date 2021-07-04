@@ -39,7 +39,16 @@ const Home = () => {
                 <About/>
                 <FeatureB/>
               
-               
+               <footer className="main-footer">
+                   <div className="footer-content">
+                       <p>Copyright © 2021 OX . All rights reserved.</p>
+                        <div className="footer-btn-container">
+                            <button className="btn-link">Sign Up</button>
+                           
+                        </div>
+                      
+                   </div>
+               </footer>
 
         </section>
     )

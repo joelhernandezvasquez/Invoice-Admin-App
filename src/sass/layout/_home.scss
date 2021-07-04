@@ -155,7 +155,7 @@
 }
 
 .feature-B-section{
-    padding:2rem 0;
+    padding:2rem 0 4rem 0;
     .featureB-header{
         img{
             width: 100%;
@@ -176,6 +176,52 @@
         button{
             display:block;
             margin:var(--top-spacing) auto;
+        }
+    }
+}
+.main-footer{
+    background:linear-gradient(90.31deg, #132B50 -10.69%, rgba(19, 43, 80, 0) 100%);
+    margin-top: auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  
+   padding:1.5rem 0;
+
+    .footer-content{
+     
+        p{
+            color:$light-white;
+            font-size: var(--fs-text);
+            font-family: $secondary-font;
+            font-weight: 500;
+        }
+        .footer-btn-container{
+         
+            display: flex;
+          justify-content: center;
+        margin-top: 1rem;
+         
+            .btn-link{
+             border:1px solid $light-white;
+             background:none;
+             border-radius: 20px;
+             padding:0.5rem 2rem;
+             color:$light-white;
+             font-size: var(--fs-text);
+             font-family: $secondary-font;
+             cursor:pointer;
+             transition: all 0.2s ease-in-out;
+
+             &:hover{
+                 background:$light-orange;
+                 border:1px solid transparent;
+                 color:$pure-white;
+             }
+            
+            }
         }
     }
 }
