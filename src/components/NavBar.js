@@ -65,16 +65,16 @@ const NavBar = () => {
    }
   
    return (
-        <nav className="main-nav-bar">
+        <nav className = {`main-nav-bar ${isMenuOpen? 'main-nav-bar-open':'null'}`}>
            <div className="container">
              <img className="logo" src={logoIcon} alt ="logo invoicely"/>
              <div className="menu-icon-container" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {renderMenuIcon()}
              </div>
-             <Modal 
+              <Modal 
              modalStyle = {`nav-bar-modal ${isMenuOpen? 'active':'null'}`}
              content = {renderContent()}
-             />
+             /> 
            </div>
         </nav>
     )

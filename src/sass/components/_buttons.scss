@@ -9,6 +9,10 @@
     border:none;
     cursor: pointer;
     
+    @media(min-width: 767px)
+    {
+      padding:1rem 3rem;
+    }
 }
 
 .btn-default{
@@ -33,10 +37,10 @@
     font-size: var(--fs-btn);
     font-family: $secondary-font;
     font-weight: 500;
-    transition: background 0.3s ease-out;
+    transition:all 0.3s ease-out;
 
     &:hover{
-      background:rgba($light-orange, 0.8);
+      box-shadow: 0px 10px 60px rgba(254, 108, 77, 0.4);
     }
 }
 

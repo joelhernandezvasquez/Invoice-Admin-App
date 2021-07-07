@@ -8,7 +8,19 @@
     --fs-btn:1rem;
     --heading-line-height:2.8rem;
 
+    @media(min-width: 600px)
+    {
+        --fs-text:1rem;
+    }
+
+    @media(min-width:767px)
+    {
+        --heading-line-height:3.28rem;
+    }
+
 }
+
+
 
 
 

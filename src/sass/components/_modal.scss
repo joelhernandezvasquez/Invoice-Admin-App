@@ -4,6 +4,7 @@
 .modal{
     position:absolute;
     z-index: 20;
+    height:100%;
 }
 
 .nav-bar-modal{
@@ -11,9 +12,8 @@
     height:0;
     background:$dark-blue-bg;
     top:60px;
-    transition: all 0.3s ease-in-out;
-  
-    
+    transition: all 0.3s ease-in-out;  
+   
 }
 
 .active.nav-bar-modal{

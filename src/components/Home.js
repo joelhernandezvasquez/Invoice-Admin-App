@@ -3,24 +3,31 @@ import NavBar from './NavBar';
 import Features from './Features';
 import About from './About';
 import FeatureB from './FeatureB';
+import UseScreenSize from './Hooks/UseScreenSize';
 import HeroImage from '../assets/images/hero.svg';
+import HeroImageV2 from '../assets/images/heroInvoice2.png';
 import BG from '../assets/images/Bg.svg';
+import BgMobile from '../assets/images/BgMobile.png';
+import Bg from '../assets/images/Bg.png';
 
 
 const Home = () => {
+   
+    const screenSize = UseScreenSize();
+
     return (
         <section className="home-page-wrapper">
                 <div className="graphic-bg">
-                    <div className="upper-line line"></div>
-                    <div className="upper-line line"></div> 
+                 <img className="graphic-shape" src={screenSize <=376?BgMobile:Bg}/>
                 </div>
+             
                 <NavBar/>
                 
                  <div className="hero-section">
                   
                      <div className="container">
                         <div className="hero-img-container">
-                         <img className="hero-img" src={HeroImage} alt="hero"/>
+                         <img className="hero-img" src={screenSize < 767? HeroImage: HeroImageV2} alt="hero"/>
                         </div>
                       
                       <div className="hero-content">
@@ -32,7 +39,7 @@ const Home = () => {
                    </div> 
 
                    <img className="bg-hero-shape" src={BG} alt="shape background" />
-                    <div className="bottom-line line"></div>
+                    
                 </div> 
 
                 <Features/>
