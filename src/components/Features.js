@@ -32,6 +32,13 @@ const Features = () => {
                     content = "Have the sacred, reached could livethought this is to the easy apparent all tonesHave the sacred, reached could."
                     link = "#"
                    />
+
+                   <FeatureCard
+                    thumbnailIcon = {settingsIcon}
+                    title = "Online Customize"
+                    content = "Have the sacred, reached could livethought this is to the easy apparent all tonesHave the sacred, reached could."
+                    link = "#"
+                   />
                   
                </div>
             </div>

@@ -7,8 +7,6 @@
     @extend %flex-spread-vertical;
     padding:2rem 0.5rem;
     
-   
-    
     .feature-heading{
         margin:40px 0 10px 0 ;
         font-size: var(--fs-h3);
@@ -35,5 +33,11 @@
             }
         }
         
+    }
+    @media(min-width: 767px)
+    {
+       .leading-text{
+            font-size:0.875rem;
+        }
     }
 }
