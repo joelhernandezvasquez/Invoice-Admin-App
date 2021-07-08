@@ -38,6 +38,10 @@
     text-align: center;
 }
 
+.subheading-text{
+    max-width: 60ch;
+   margin:var(--top-spacing) auto;
+}
 .grid-col-2{
     display:grid;
     grid-template-columns: repeat(2,1fr);

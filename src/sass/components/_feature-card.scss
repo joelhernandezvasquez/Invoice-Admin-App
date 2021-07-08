@@ -4,7 +4,7 @@
 
 .feature-card{
     max-width: 374px;
-    @extend %flex-spread-vertical;
+   @extend %flex-spread-vertical;
     padding:2rem 0.5rem;
     
     .feature-heading{

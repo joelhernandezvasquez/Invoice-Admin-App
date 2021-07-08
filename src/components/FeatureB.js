@@ -1,21 +1,24 @@
 import React from 'react';
 import FeatureCard from './FeatureCard';
+import UseScreenSize from './Hooks/UseScreenSize';
 import FeatureBImg from '../assets/images/featureB.png';
-import iconExperience from '../assets/images/icon2.svg';
+import bigFeatureImg from '../assets/images/feature-B-img.png';
+import iconExperience from '../assets/images/icon(4).svg';
 import iconSupport from '../assets/images/icon3.svg';
 
 
 const FeatureB = () => {
+  const screenWidth = UseScreenSize();
     return (
         <section className="feature-B-section">
             <div className="container">
                 <div className="featureB-header">
-                   <img src={FeatureBImg} alt = "feature image"/>
+                   <img className = "feature-img" src={FeatureBImg} alt = "feature image"/>
                 </div>
                 <div className="featureB-content-container">
                     <div className="header-content">
                         <h2 className="section-title text-center">Perfect Solutio For Small Business</h2>
-                        <p className="leading-text text-center">Our powerfull AI tool organizes sales reports for daily, weekly, monthly and overall yearly. Which leads less human works and maintenenceIt is a long established fact that a reader.</p>
+                        <p className=" subheading-text leading-text text-center">Our powerfull AI tool organizes sales reports for daily, weekly, monthly and overall yearly. Which leads less human works and maintenenceIt is a long established fact that a reader.</p>
                     </div>
                     <div className = "featureA-content">
                      <FeatureCard
