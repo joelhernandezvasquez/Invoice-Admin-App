@@ -1,15 +1,18 @@
 import React from 'react';
 import AboutImg from '../assets/images/Image21.png';
 import RectangleUpperShape from '../assets/images/RectangleUpperAbout.svg';
+import RectangleUpperShapeTablet from '../assets/images/shapeRectangleATabletVersion.png';
 import RectangleBottomShape from '../assets/images/rectangleBottomAbout.svg';
+import UseScreenSize from './Hooks/UseScreenSize';
 
 const About = () => {
+    
+  const screenWidth = UseScreenSize();
     return (
         <section className="about-section">
           <div className="container">
              <div className="about-image-container">
                  <img className="dashboard-about-img" src={AboutImg} alt="dashboard img"/>
-                 <img className="shapeRectangleA" src={RectangleUpperShape} alt="shape"/>
              </div>
              <div className="description-container">
                  <h2 className="section-title text-center"> Increase Your Business Growth & Sale</h2>
@@ -18,6 +21,7 @@ const About = () => {
                  <img className="shapeRectangleB" src={RectangleBottomShape} alt = "rectangle shape"/>
                 
              </div>
+             <img className="shapeRectangleA" src={screenWidth < 767? RectangleUpperShape:RectangleUpperShapeTablet} alt="shape"/>
           </div>
         </section>
     )
