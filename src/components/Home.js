@@ -12,7 +12,7 @@ import Bg from '../assets/images/Bg.png';
 
 
 const Home = () => {
-   
+
     const screenSize = UseScreenSize();
 
     return (
