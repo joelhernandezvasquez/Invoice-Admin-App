@@ -5,11 +5,17 @@
     align-items: center;
     justify-content: space-between;
 }
+
+%flex-spread-around{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
 %flex-spread-vertical{
     display:flex;
     flex-direction: column;
     align-items: center;
-    //justify-content: space-between;
+    
 }
 
 %flex-center{
