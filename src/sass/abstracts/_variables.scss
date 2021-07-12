@@ -20,6 +20,21 @@
         --heading-line-height:3.28rem;
        
     }
+    @media(min-width: 1000px)
+    {
+        --fs-h1:3rem;
+    }
+
+    @media(min-width: 1280px)
+    {
+       --fs-text:1.125rem;
+    }
+
+    @media(min-width: 1480px)
+    {
+        --fs-h1:3.5rem;
+        --heading-line-height:4.5rem;
+    }
 
 }
 

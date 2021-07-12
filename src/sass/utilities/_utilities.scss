@@ -32,6 +32,10 @@
     {
         line-height: 1.7rem;
     }
+    @media(min-width: 1280px)
+    {
+        line-height: 2rem;
+    }
 }
 
 .text-center{

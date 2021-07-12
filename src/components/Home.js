@@ -5,20 +5,28 @@ import About from './About';
 import FeatureB from './FeatureB';
 import UseScreenSize from './Hooks/UseScreenSize';
 import HeroImage from '../assets/images/hero.svg';
-import HeroImageV2 from '../assets/images/heroInvoice2.png';
 import BG from '../assets/images/Bg.svg';
 import BgMobile from '../assets/images/BgMobile.png';
 import Bg from '../assets/images/Bg.png';
+import BGShape from '../assets/images/BGShape.png';
 
 
 const Home = () => {
 
     const screenSize = UseScreenSize();
 
+   const renderShape = () =>{
+      if(screenSize <=376)
+        return BgMobile;
+      if(screenSize > 376 && screenSize < 1400)
+         return Bg;
+    if(screenSize > 1400)
+      return BGShape;
+   }
     return (
         <section className="home-page-wrapper">
                 <div className="graphic-bg">
-                 <img className="graphic-shape" src={screenSize <=376?BgMobile:Bg}/>
+                 <img className="graphic-shape" src={renderShape()}/>
                 </div>
              
                 <NavBar/>
@@ -27,7 +35,7 @@ const Home = () => {
                   
                      <div className="container">
                         <div className="hero-img-container">
-                         <img className="hero-img" src={screenSize < 767? HeroImage: HeroImageV2} alt="hero"/>
+                           <img className="hero-img" src={HeroImage} alt="hero"/>
                         </div>
                       
                       <div className="hero-content">

@@ -9,16 +9,9 @@
     border:none;
     cursor: pointer;
     
-    @media(min-width: 767px)
-    {
-      padding:1rem 3rem;
-    }
-  
-    @media(min-width: 1000px)
-    {
-      padding:0.5rem 1.5rem;
-    }
-    @media(min-width: 1400px)
+    
+
+    @media(min-width: 1200px)
     {
       padding:0.8rem 2.5rem;
     }
