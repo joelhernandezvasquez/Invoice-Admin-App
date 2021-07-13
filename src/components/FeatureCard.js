@@ -1,8 +1,8 @@
 import React from 'react';
 
-const FeatureCard = ({thumbnailIcon,title,content,link}) => {
+const FeatureCard = ({thumbnailIcon,title,content,link,bgCard}) => {
     return (
-        <div className="feature-card">
+        <div className={`feature-card ${bgCard?'bgCard':''}`}>
             <img src={thumbnailIcon} alt ="time tracking"/>
            
             <h3 className="feature-heading"> {title}</h3>  

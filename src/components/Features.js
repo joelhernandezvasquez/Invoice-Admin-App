@@ -17,6 +17,7 @@ const Features = () => {
                      title = "Time Tracking"
                      content = "Have the sacred, reached could livethought this is to the easy apparent all tonesHave the sacred, reached could."
                      link = "#"
+                     bgCard = {true}
                    />
 
                    <FeatureCard
@@ -24,6 +25,7 @@ const Features = () => {
                     title = "Monthly Stats"
                     content = "Have the sacred, reached could livethought this is to the easy apparent all tonesHave the sacred, reached could."
                     link = "#"
+                    bgCard = {true}
                    />
 
                    <FeatureCard
@@ -31,6 +33,7 @@ const Features = () => {
                     title = "Online Customize"
                     content = "Have the sacred, reached could livethought this is to the easy apparent all tonesHave the sacred, reached could."
                     link = "#"
+                    bgCard = {true}
                    />
 
                   
