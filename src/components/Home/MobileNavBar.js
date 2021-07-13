@@ -1,6 +1,7 @@
 
 import React,{useState} from 'react';
 import Modal from '../Modal';
+import {Link} from 'react-router-dom';
 import logoIcon from '../../assets/images/logo.svg';
 
 const MobileNavBar = () => {
@@ -54,7 +55,7 @@ const MobileNavBar = () => {
                </li>
   
                <div className="auth-btn-container">
-                  <button className="btn btn-default"> Sign in </button> 
+                  <Link to ="/login" className="btn btn-default"> Sign in </Link> 
                   <button className="btn btn-primary"> Sign up </button> 
              </div>
              

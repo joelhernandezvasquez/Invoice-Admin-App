@@ -4,6 +4,7 @@ import Features from './Home/Features';
 import About from './Home/About';
 import FeatureB from './Home/FeatureB';
 import UseScreenSize from './Hooks/UseScreenSize';
+import {Link} from 'react-router-dom';
 import HeroImage from '../assets/images/hero.svg';
 import BG from '../assets/images/Bg.svg';
 import BgMobile from '../assets/images/BgMobile.png';
@@ -40,7 +41,7 @@ const Home = () => {
                       <div className="hero-content">
                           <h1>Make Your Business Easier & <span> Simple</span></h1>
                           <p className="leading-text text-center text">The poster concept but the never back we to and desk noise towards never of thought, of merit business least exerted considerable.</p>
-                          <button className="btn btn-primary"> Try Free Trial </button> 
+                          <Link to="/login" className="btn btn-primary"> Try Free Trial </Link> 
                       </div>
 
                    </div> 

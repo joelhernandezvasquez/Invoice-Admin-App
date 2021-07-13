@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from './Home';
-import Auth from './Auth';
+import Login from './Login';
 import {BrowserRouter as Router,Route} from 'react-router-dom';
 import '../sass/main.scss';
 
@@ -9,7 +9,7 @@ const App = () => {
         <>
         <Router>
           <Route exact path='/' component = {Home}/>
-          <Route exact path ='/auth' component = {Auth} />
+          <Route exact path ='/login' component = {Login} />
         </Router>
         </>
     )

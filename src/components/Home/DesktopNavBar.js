@@ -1,4 +1,5 @@
 import {useEffect,useRef} from 'react';
+import {Link} from 'react-router-dom';
 import logoIcon from '../../assets/images/logo.svg';
 
 const DesktopNavBar = () => {
@@ -45,7 +46,7 @@ const DesktopNavBar = () => {
               </ul>
          
           <div className="authentication-btn-container">
-                <button className="btn btn-default">Log In</button>
+                <Link to ="/login" className="btn btn-default">Log In</Link>
                 <button  className="btn btn-primary">Sign Up</button>
           </div>
         </nav>
