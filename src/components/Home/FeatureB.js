@@ -1,10 +1,10 @@
 import React from 'react';
 import FeatureCard from './FeatureCard';
-import UseScreenSize from './Hooks/UseScreenSize';
-import FeatureBImg from '../assets/images/featureB.png';
-import bigFeatureImg from '../assets/images/featureImage2.png';
-import iconExperience from '../assets/images/icon(4).svg';
-import iconSupport from '../assets/images/icon3.svg';
+import UseScreenSize from '../Hooks/UseScreenSize';
+import FeatureBImg from '../../assets/images/featureB.png';
+import bigFeatureImg from '../../assets/images/featureImage2.png';
+import iconExperience from '../../assets/images/icon(4).svg';
+import iconSupport from '../../assets/images/icon3.svg';
 
 
 const FeatureB = () => {
@@ -13,7 +13,7 @@ const FeatureB = () => {
         <section className="feature-B-section">
             <div className="container">
                 <div className="featureB-header">
-                   <img className = "feature-img" src={screenWidth < 1200?FeatureBImg: bigFeatureImg} alt = "feature image"/>
+                   <img className = "feature-img" src={screenWidth < 1200?FeatureBImg: bigFeatureImg} alt = "feature images"/>
                 </div>
                 <div className="featureB-content-container">
                     <div className="header-content">

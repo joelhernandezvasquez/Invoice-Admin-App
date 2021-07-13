@@ -1,8 +1,8 @@
 import React from 'react';
 import FeatureCard from './FeatureCard';
-import  timeTrackingIcon from '../assets/images/timeTrackingIcon.svg';
-import  monthlyStatsIcon from '../assets/images/monthlyStatsIcon.svg';
-import  settingsIcon from '../assets/images/settingsIcon.svg';
+import  timeTrackingIcon from '../../assets/images/timeTrackingIcon.svg';
+import  monthlyStatsIcon from '../../assets/images/monthlyStatsIcon.svg';
+import  settingsIcon from '../../assets/images/settingsIcon.svg';
 
 const Features = () => {
     return (

@@ -1,11 +1,11 @@
 import React from 'react';
-import AboutImgSm from '../assets/images/Image22.png';
-import AboutImgBg from '../assets/images/Image21.png';
-import RectangleUpperShape from '../assets/images/RectangleUpperAbout.svg';
-import RectangleUpperShapeTablet from '../assets/images/shapeRectangleATabletVersion.png';
-import RectangleUpperShapeDesktop from '../assets/images/rectangleDesktopVersion.png';
+import AboutImgSm from '../../assets/images/Image22.png';
+import AboutImgBg from '../../assets/images/Image21.png';
+import RectangleUpperShape from '../../assets/images/RectangleUpperAbout.svg';
+import RectangleUpperShapeTablet from '../../assets/images/shapeRectangleATabletVersion.png';
+import RectangleUpperShapeDesktop from '../../assets/images/rectangleDesktopVersion.png';
 
-import UseScreenSize from './Hooks/UseScreenSize';
+import UseScreenSize from '../Hooks/UseScreenSize';
 
 const About = () => {
     

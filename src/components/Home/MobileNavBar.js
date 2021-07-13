@@ -1,7 +1,7 @@
 
 import React,{useState} from 'react';
-import Modal from './Modal';
-import logoIcon from '../assets/images/logo.svg';
+import Modal from '../Modal';
+import logoIcon from '../../assets/images/logo.svg';
 
 const MobileNavBar = () => {
    

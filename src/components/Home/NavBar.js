@@ -1,7 +1,7 @@
 
 import MobileNavBar from './MobileNavBar';
 import DesktopNavBar from './DesktopNavBar';
-import UseScreenSize from './Hooks/UseScreenSize';
+import UseScreenSize from '../Hooks/UseScreenSize';
 
 const NavBar = () => {
    

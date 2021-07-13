@@ -1,5 +1,5 @@
 import {useEffect,useRef} from 'react';
-import logoIcon from '../assets/images/logo.svg';
+import logoIcon from '../../assets/images/logo.svg';
 
 const DesktopNavBar = () => {
     

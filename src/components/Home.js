@@ -1,15 +1,14 @@
 import React from 'react';
-import NavBar from './NavBar';
-import Features from './Features';
-import About from './About';
-import FeatureB from './FeatureB';
+import NavBar from './Home/NavBar';
+import Features from './Home/Features';
+import About from './Home/About';
+import FeatureB from './Home/FeatureB';
 import UseScreenSize from './Hooks/UseScreenSize';
 import HeroImage from '../assets/images/hero.svg';
 import BG from '../assets/images/Bg.svg';
 import BgMobile from '../assets/images/BgMobile.png';
 import Bg from '../assets/images/Bg.png';
 import BGShape from '../assets/images/BGShape.png';
-
 
 const Home = () => {
 
@@ -26,7 +25,7 @@ const Home = () => {
     return (
         <section className="home-page-wrapper">
                 <div className="graphic-bg">
-                 <img className="graphic-shape" src={renderShape()}/>
+                 <img className="graphic-shape" src={renderShape()} alt="graphic"/>
                 </div>
              
                 <NavBar/>
@@ -45,9 +44,7 @@ const Home = () => {
                       </div>
 
                    </div> 
-
-                   <img className="bg-hero-shape" src={BG} alt="shape background" />
-                    
+                   <img className="bg-hero-shape" src={BG} alt="shape background" /> 
                 </div> 
 
                 <Features/>
@@ -55,7 +52,7 @@ const Home = () => {
                 <FeatureB/>
               
                <footer className="main-footer">
-                   <div className="footer-content">
+                   <div className="container">
                        <p>Copyright © 2021 OX . All rights reserved.</p>
                         <div className="footer-btn-container">
                             <button className="btn-link">Sign Up</button>

@@ -9,15 +9,11 @@
     border:none;
     cursor: pointer;
     
-    
-
     @media(min-width: 1200px)
     {
       padding:0.8rem 2.5rem;
     }
-    
 }
-
 .btn-default{
   background:none;
   color: $pure-white;
@@ -31,7 +27,6 @@
     background:$light-orange;
    
    }
-
 }
 
 .btn-primary{
