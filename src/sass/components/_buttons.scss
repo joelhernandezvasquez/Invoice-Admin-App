@@ -42,3 +42,29 @@
     }
 }
 
+.google-btn{
+  background:#333270;
+  padding:1rem 0;
+  border:none;
+  border-radius: 50px;
+  border:1px solid $pure-white;
+  cursor: pointer;
+  @extend %flex-center;
+  
+  .google-icon{
+    width: 16px;
+    height:16px;
+
+    @media(min-width:767px)
+    {
+      width: 20px;
+      height:20px;
+    }
+  }
+  .btn-text{
+    color:$pure-white;
+    font-size:var(--fs-btn);
+    margin:0 1rem;
+  }
+}
+

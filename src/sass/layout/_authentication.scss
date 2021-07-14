@@ -1,0 +1,61 @@
+
+@import '../utilities/container';
+@import '../abstracts/colors';
+@import '../abstracts/variables';
+@import '../utilities/logo';
+
+
+.auth-container{
+    background:$dark-blue-bg;
+    height:100vh;
+    position:relative;
+    
+    .graphic{
+        position: absolute;
+        top:-350px;
+        left:0;
+        z-index: 1;
+    }
+    .container{
+        border:1px solid red;
+        z-index: 2;
+        .auth-header{
+            width:100%;
+            border:1px solid red;
+            margin: var(--top-spacing) 0;
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.auth-form{
+    border:1px solid blue;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height:500px;
+    position: relative;
+    z-index: 2;
+ 
+    button{
+        width: 100%;
+    }
+    .divider-line{
+       width: 100%;
+       @extend %flex-spread;
+        border:1px solid red;
+        .line{
+            width: 40%;
+            height:1px;
+            background:#E2E2E2;
+        }
+        span{
+            color:$pure-white;
+            
+        }
+    }
+
+}

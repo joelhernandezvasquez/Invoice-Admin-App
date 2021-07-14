@@ -3,6 +3,7 @@
 @import 'abstracts/placeholders';
 @import 'base/reset';
 @import 'layout/home';
+@import 'layout/authentication';
 
 
 body{
@@ -12,7 +13,7 @@ body{
 }
 
 
-:is(h1,h2,h3,a){
+:is(h1,h2,h3,a,button){
     font-family:$primary-font;
 }
 
