@@ -17,7 +17,7 @@ body{
     font-family:$primary-font;
 }
 
-:is(p,span,label){
+:is(p,span,label,input){
   font-family:$secondary-font;
 }
 

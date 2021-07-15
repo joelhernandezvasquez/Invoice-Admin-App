@@ -1,5 +1,6 @@
 
 @import '../utilities/container';
+@import'../utilities/errors';
 @import '../abstracts/colors';
 @import '../abstracts/variables';
 @import '../utilities/logo';
@@ -16,15 +17,20 @@
         top:-350px;
         left:0;
         z-index: 1;
+
+      
     }
     .container{
         z-index: 2;
+        
         .auth-header{
             width:100%;
             margin: var(--top-spacing) 0;
+            @extend %flex-center;
             img{
                 width: 100%;
                 object-fit: cover;
+                max-width: 500px;
             }
         }
     }

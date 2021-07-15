@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import AuthForm from './Forms/AuthForm';
 import GraphicBg from '../assets/images/authGraphic.png';
 import Frame from '../assets/images/Frame.png';
@@ -6,8 +6,8 @@ import Frame from '../assets/images/Frame.png';
 const Login = () => {
     
 
-    const handleLogin = () =>{
-        console.log("login")
+    const handleLogin = (values) =>{
+        console.log(`from login ${values}`)
     }
     return (
         

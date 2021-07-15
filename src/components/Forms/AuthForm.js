@@ -5,26 +5,45 @@ import GoogleIcon from '../../assets/images/googleIcon.svg';
 
 const AuthForm = ({Title,Access,Type,handleLogin}) => {
     
-    const formik = useFormik({
-        initialValues:{
-            email:'',
-            password:''
-        },
-        onSubmit: values =>{
-            console.log('form values:',values);
-        },
-        validate: values =>{
-            
+  const initialValues = {
+    email:'',
+    password:''
+  }
+
+  const onSubmit  = values =>{
+    handleLogin(formik.values);
+  }
+
+  const validate = values =>{
+    let errors = {}
+    
+        if(!values.email) {
+            errors.email = "Required";
+        }
+            else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)){
+            errors.email = "Invalid Email Format";
         }
 
-       
+        if(!values.password){ 
+            errors.password = "Required"
+        }
+        else if(values.password.length < 8)
+        {
+            errors.password = "Minimun 8 characters"
+    }
+   return errors;
+  }
+
+    const formik = useFormik({
+        initialValues,
+        onSubmit,
+        validate
     })
 
-   
-    
+
     const renderAccessText = ()=>{
 
-        if(Type == 'login' || Type ==='Login')
+        if(Type === 'login' || Type ==='Login')
         {
         return(
           <p className="account-access-text"> Not registered yet? <a href="#">Create an Account?</a></p>
@@ -40,7 +59,7 @@ const AuthForm = ({Title,Access,Type,handleLogin}) => {
     }
     return (
         
-        <form className="auth-form" onSubmit={formik.handleSubmit}>
+        <form className="auth-form container" onSubmit={formik.handleSubmit}>
            <img className="logo" src={LogoIcon} alt ="logo icon"/>
            <h2 className="section-title text-center">{Title}</h2>
            <button className="google-btn">
@@ -58,8 +77,12 @@ const AuthForm = ({Title,Access,Type,handleLogin}) => {
                <input className="text-field" 
                type="email" 
                name ="email" 
+               placeholder = {"sarac@gmail.com"}
                onChange = {formik.handleChange}
-               value = {formik.values.email}/>
+               value = {formik.values.email}
+               onBlur = {formik.handleBlur}
+               />
+               {formik.touched.email && formik.errors.email? <div className="emptyField">{formik.errors.email}</div>:null}
            </div>
 
            <div className="form-control">
@@ -67,11 +90,15 @@ const AuthForm = ({Title,Access,Type,handleLogin}) => {
                <input className="text-field" 
                type="password" 
                name ="password" 
+               placeholder = {"Minimun 8 Characters"}
                onChange = {formik.handleChange}
-               value = {formik.values.password}/>
+               value = {formik.values.password}
+               onBlur = {formik.handleBlur}
+               />
+               { formik.touched.password &&  formik.errors.password? <div className="emptyField">{formik.errors.password}</div>:null}
            </div>
            
-           <button  className="btn btn-primary auth-btn" type="submit" onClick = {()=> handleLogin()}>{Type}</button>
+           <button className="btn btn-primary auth-btn" type="submit">{Type}</button>
 
            {renderAccessText()}
         </form>
