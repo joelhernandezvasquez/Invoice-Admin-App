@@ -8,8 +8,7 @@
 
 body{
   position:relative;
-
-  
+ 
 }
 
 
@@ -20,4 +19,5 @@ body{
 :is(p,span,label,input){
   font-family:$secondary-font;
 }
+
 

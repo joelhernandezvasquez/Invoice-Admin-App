@@ -59,8 +59,9 @@ const AuthForm = ({Title,Access,Type,handleLogin}) => {
     }
     return (
         
-        <form className="auth-form container" onSubmit={formik.handleSubmit}>
-           <img className="logo" src={LogoIcon} alt ="logo icon"/>
+            <div className="form-container">
+            <div className = "inner-container">
+              <div className="logo-container"><img className="logo" src={LogoIcon} alt ="logo icon"/></div>
            <h2 className="section-title text-center">{Title}</h2>
            <button className="google-btn">
                <img className="google-icon" src={GoogleIcon} alt="google icon"/>
@@ -71,7 +72,7 @@ const AuthForm = ({Title,Access,Type,handleLogin}) => {
                <span>Or</span>
                <div className="line"></div>
            </div>
-
+           <form className="auth-form" onSubmit={formik.handleSubmit}>
            <div className="form-control">
                <label className="primary-label" htmlFor="email">email</label>
                <input className="text-field" 
@@ -102,6 +103,8 @@ const AuthForm = ({Title,Access,Type,handleLogin}) => {
 
            {renderAccessText()}
         </form>
+        </div>
+        </div>
     )
 }
 

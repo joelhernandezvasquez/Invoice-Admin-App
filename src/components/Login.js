@@ -30,7 +30,7 @@ const Login = () => {
                 />     
             </div>
 
-            <footer className="container">
+            <footer>
                 <p>Copyright © 2021 OX . All rights reserved.</p>
             </footer>
         </div>

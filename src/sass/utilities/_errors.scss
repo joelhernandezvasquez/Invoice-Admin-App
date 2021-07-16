@@ -3,5 +3,10 @@
     color:$light-orange;
     font-size: 14px;
     font-family: $secondary-font;
+
+    @media(min-width: 767px)
+    {
+        font-size: 1rem;
+    }
     
 }
