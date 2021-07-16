@@ -56,7 +56,7 @@ const MobileNavBar = () => {
   
                <div className="auth-btn-container">
                   <Link to ="/login" className="btn btn-default"> Sign in </Link> 
-                  <button className="btn btn-primary"> Sign up </button> 
+                  <Link to = "/signup" className="btn btn-primary"> Sign up </Link> 
              </div>
              
             </ul>

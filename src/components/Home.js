@@ -56,7 +56,7 @@ const Home = () => {
                    <div className="container">
                        <p>Copyright © 2021 OX . All rights reserved.</p>
                         <div className="footer-btn-container">
-                            <button className="btn-link">Sign Up</button>
+                            <Link to ="/signup" className="btn-link">Sign Up</Link>
                            
                         </div>
                       

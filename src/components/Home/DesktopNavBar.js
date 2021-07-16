@@ -47,7 +47,7 @@ const DesktopNavBar = () => {
          
           <div className="authentication-btn-container">
                 <Link to ="/login" className="btn btn-default">Log In</Link>
-                <button  className="btn btn-primary">Sign Up</button>
+                <Link to = "/signup" className="btn btn-primary">Sign Up</Link>
           </div>
         </nav>
     )
