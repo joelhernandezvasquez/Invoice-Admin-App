@@ -69,10 +69,10 @@ const SignUp = () => {
             <div className = "inner-container">
               <div className="logo-container"><img className="logo" src={LogoIcon} alt ="logo icon"/></div>
            <h2 className="section-title text-center">Sign Up into your Invoicely account</h2>
-           <button className="google-btn">
+           <a className="google-btn" href="/auth/google/register">
                <img className="google-icon" src={GoogleIcon} alt="google icon"/>
                <span className="btn-text">Sign Up</span>
-           </button>
+           </a>
            <div className="divider-line">
                <div className="line"></div>
                <span>Or</span>

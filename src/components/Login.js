@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {useFormik} from 'formik';
 import {Link} from 'react-router-dom';
 import GraphicBg from '../assets/images/authGraphic.png';
@@ -7,12 +7,12 @@ import LogoIcon from '../assets/images/logo.svg';
 import GoogleIcon from '../assets/images/googleIcon.svg';
 
 const Login = () => {
-    
-    
+
     const initialValues = {
         email:'',
         password:''
       }
+
 
       const validate = values =>{
         let errors = {}
@@ -47,7 +47,7 @@ const Login = () => {
 
     
     return (
-        
+      
         <div className="auth-container">
             
             <div className="graphic">
@@ -63,10 +63,10 @@ const Login = () => {
             <div className = "inner-container">
               <div className="logo-container"><img className="logo" src={LogoIcon} alt ="logo icon"/></div>
            <h2 className="section-title text-center">Log into your Invoicely account</h2>
-           <button className="google-btn">
+           <a href='/auth/google' className="google-btn">
                <img className="google-icon" src={GoogleIcon} alt="google icon"/>
                <span className="btn-text">Sign in</span>
-           </button>
+           </a>
            <div className="divider-line">
                <div className="line"></div>
                <span>Or</span>
@@ -116,5 +116,7 @@ const Login = () => {
         </div>
     )
 }
+
+
 
 export default Login;
