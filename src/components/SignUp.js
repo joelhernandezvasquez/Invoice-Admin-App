@@ -1,23 +1,43 @@
-import React from 'react';
+import React,{useState,useRef} from 'react';
+import ErrorMessage from './ReusableComponents/ErrorMessage';
 import {useFormik} from 'formik';
 import {Link} from 'react-router-dom';
+import {connect} from "react-redux";
+import { createUser } from '../actions';
+import axios from 'axios';
 import LogoIcon from '../assets/images/logo.svg';
 import GoogleIcon from '../assets/images/googleIcon.svg';
 import GraphicBg from '../assets/images/authGraphic.png';
 import Frame from '../assets/images/Frame.png';
 
-const SignUp = () => {
+const SignUp = ({createUser,users}) => {
     
-    const initialValues = {
+  const [existingUser,setExistingUser] = useState(null);
+  const emailInputRef = useRef();
+  
+  const initialValues = {
         name:'',
         email:'',
         password:''
       }
-    
 
-    const onSubmit = (values) =>{
-        console.log(`Hello from sign up ${values.name}`);
+    const onSubmit = async (values) =>{
+       // checking if the user has an account in the database before created it.
+       
+       const response = await axios.post('/api/existing_user',{...values});
+       const{data} = response;
+
+       if(data.userExist){
+            setExistingUser(true);
+            emailInputRef.current.focus();
+            return;
+        }
+        setExistingUser(false);
+        createUser(values);
+       
     }
+
+  
 
     const validate = values =>{
         let errors = {}
@@ -69,16 +89,28 @@ const SignUp = () => {
             <div className = "inner-container">
               <div className="logo-container"><img className="logo" src={LogoIcon} alt ="logo icon"/></div>
            <h2 className="section-title text-center">Sign Up into your Invoicely account</h2>
+
+         
            <a className="google-btn" href="/auth/google/register">
                <img className="google-icon" src={GoogleIcon} alt="google icon"/>
                <span className="btn-text">Sign Up</span>
-           </a>
+           </a> 
            <div className="divider-line">
                <div className="line"></div>
                <span>Or</span>
                <div className="line"></div>
            </div>
-           <form className="auth-form" onSubmit={formik.handleSubmit}>
+           
+           {existingUser &&(
+             <ErrorMessage
+             title = "Something is not quite Right."
+             message = "This email has already been registered. Please choose a different email, or sign in if you are already a user."
+           />  
+           )}
+            
+
+
+           <form className="auth-form" onSubmit={formik.handleSubmit}  >
            <div className="form-control">
                <label className="primary-label" htmlFor="name">name</label>
                <input className="text-field" 
@@ -95,6 +127,7 @@ const SignUp = () => {
            <div className="form-control">
                <label className="primary-label" htmlFor="email">email</label>
                <input className="text-field" 
+               ref= {emailInputRef}
                type="email" 
                name ="email" 
                placeholder = {"sarac@gmail.com"}
@@ -135,4 +168,11 @@ const SignUp = () => {
     )
 }
 
-export default SignUp;
+const mapStateToProps = (state) =>{
+    
+    return{
+        users:state.users
+    }
+}
+
+export default connect(mapStateToProps,{createUser}) (SignUp);

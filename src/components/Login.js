@@ -1,19 +1,21 @@
-import React,{useEffect} from 'react';
+import React from 'react';
+import history from '../history';
+import  ErrorMessage  from './ReusableComponents/ErrorMessage';
 import {useFormik} from 'formik';
 import {Link} from 'react-router-dom';
+import { loginUser } from '../actions';
+import {connect} from 'react-redux';
 import GraphicBg from '../assets/images/authGraphic.png';
 import Frame from '../assets/images/Frame.png';
 import LogoIcon from '../assets/images/logo.svg';
 import GoogleIcon from '../assets/images/googleIcon.svg';
 
-const Login = () => {
+const Login = ({loginUser,location}) => {
 
     const initialValues = {
         email:'',
         password:''
       }
-
-
       const validate = values =>{
         let errors = {}
         
@@ -35,8 +37,10 @@ const Login = () => {
        return errors;
       }
 
-      const onSubmit = (values) =>{
-        console.log(`from login ${values}`)
+      const onSubmit =async(values) =>{
+        history.replace('/login',null)
+        loginUser(values);
+
     }
 
       const formik = useFormik({
@@ -49,7 +53,6 @@ const Login = () => {
     return (
       
         <div className="auth-container">
-            
             <div className="graphic">
                 <img src = {GraphicBg} alt = "graphic shape"/>
             </div>
@@ -71,7 +74,14 @@ const Login = () => {
                <div className="line"></div>
                <span>Or</span>
                <div className="line"></div>
-           </div>
+           </div> 
+  
+           { location.state === 'login failed' &&(
+           <ErrorMessage
+             title = "Something went wrong."
+             message = "Email/Password does not match."
+           />  )
+           }
            <form className="auth-form" onSubmit={formik.handleSubmit}>
 
            <div className="form-control">
@@ -119,4 +129,4 @@ const Login = () => {
 
 
 
-export default Login;
+export default connect(null,{loginUser})(Login);

@@ -10,3 +10,22 @@
     }
     
 }
+
+.error-message-box{
+    width: 100%;
+   background-color:#de350b;
+    border-radius: 5px;
+    color:$pure-white;
+    padding:10px;
+
+    & > *{
+        margin:5px 0;
+    }
+
+    .title{
+        font-size: 1.2rem;
+    }
+    .text-message{
+        font-size: 14px;
+    }
+}

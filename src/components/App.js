@@ -1,43 +1,31 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import Home from './Home';
 import Login from './Login';
 import AccountError from './AccountError';
 import SignUp from './SignUp';
-import {BrowserRouter as Router,Route} from 'react-router-dom';
-import { fetchUser } from '../actions';
-import { connect } from 'react-redux';
+import history from '../history';
+import {Router,Route} from 'react-router-dom';
 import Dashboard from './Dashboard';
 import ExistingAccoutError from './ExistingAccoutError';
 import '../sass/main.scss';
-
-const App = ({fetchUser,user}) => {
-  
-
-  useEffect(()=>{
-    fetchUser();
- },[])  
+ 
+const App = () => {
   
   return (
         <>
 
-        {console.log(user)}
-        <Router>
-          <Route exact path='/' component = {Home}/>
-          <Route exact path ='/login' component = {Login} />
-          <Route exact path = '/signup' component = {SignUp}/>
-          <Route exact path = '/dashboard' component = {Dashboard}/>
-          <Route exact path = '/no-account-found/google-oauth2' component = {AccountError}/>
-          <Route exact path = '/account-found/google-oauth2'component = {ExistingAccoutError}/>
+        <Router history = {history}>
+          <Route path='/' exact component = {Home}/>
+          <Route  path ='/login' exact  component = {Login} />
+          <Route  path = '/signup' exact component = {SignUp}/>
+          <Route  path = '/dashboard' exact component = {Dashboard}/>
+          <Route path = '/no-account-found/google-oauth2'exact component = {AccountError}/>
+          <Route  path = '/account-found/google-oauth2'exact component = {ExistingAccoutError}/>
           
         </Router>
         </>
     )
 }
 
-const mapStateToProps = (state) =>{
-  return{
-    user:state.user
-  }
-}
 
-export default connect(mapStateToProps,{fetchUser}) (App);
+export default App;

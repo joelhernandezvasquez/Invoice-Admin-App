@@ -1,0 +1,12 @@
+@import '../abstracts/colors';
+@import '../abstracts/variables';
+@import '../utilities/container';
+@import '../utilities//utilities';
+@import '../utilities/logo';
+
+
+.dashboard-wrapper{
+  background-color: $dark-white;
+  height:300px;
+
+}

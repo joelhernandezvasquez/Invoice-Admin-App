@@ -3,15 +3,17 @@
 @import 'abstracts/placeholders';
 @import 'base/reset';
 @import 'layout/home';
+@import 'layout/dashboard';
 @import 'layout/authentication';
 @import 'layout/error_account';
+@import 'utilities/errors';
+
 
 
 body{
   position:relative;
  
 }
-
 
 :is(h1,h2,h3,a,button){
     font-family:$primary-font;
