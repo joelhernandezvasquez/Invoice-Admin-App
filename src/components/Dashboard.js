@@ -22,7 +22,6 @@ const Dashboard = ({location,userAccess,userError}) =>{
 
   const invoices = [
     {
-     
       customer:'Chef Renata',
       date:'4 June 2020',
       status:'paid',
@@ -32,31 +31,64 @@ const Dashboard = ({location,userAccess,userError}) =>{
     
       customer:'Renata',
       date:'7 June 2020',
-      paymentStatus:'pending',
+      status:'pending',
       amount:4032
     },
     {
-      
       customer:'Nobu 57',
       date:'8 June 2021',
-      paymentStatus:'Sent',
+      status:'sent',
       amount:253
     },
 
     {
-     
       customer:'Security',
       date:'1 June 2020',
-      paymentStatus:'pending',
+      status:'pending',
       amount:5853
     },
 
     {
-     
       customer:'Angel Bury',
       date:'10 June 2020',
-      paymentStatus:'paid',
+      status:'paid',
       amount:10553
+    },
+  ]
+
+  const customers = [
+    {
+      customer:'Chef Renata',
+      date:'2 June 2020',
+      customerStatus:'active',
+      id:5111
+    },
+    {
+    
+      customer:'Renata',
+      date:'7 June 2020',
+      customerStatus:'inactive',
+      id:4032
+    },
+    {
+      customer:'Nobu 57',
+      date:'8 June 2021',
+      customerStatus:'active',
+      id:253
+    },
+
+    {
+      customer:'Security',
+      date:'1 June 2020',
+      customerStatus:'inactive',
+      id:5853
+    },
+
+    {
+      customer:'Angel Bury',
+      date:'10 June 2020',
+      customerStatus:'active',
+      id:10553
     },
   ]
 
@@ -152,7 +184,7 @@ const Dashboard = ({location,userAccess,userError}) =>{
 
                 <InvoiceStats
                  numberOfStats = {2478}
-                 type={"Total Invoices Sent"}
+                 type={"Invoices Sent"}
                  iconStats = {SentInvoicesIcon}
                  graphicBar = {GraphicBarSentIcon}
                />
@@ -160,17 +192,44 @@ const Dashboard = ({location,userAccess,userError}) =>{
             </div>
 
             <div className="container">
-              <div className="recent-invoices-container">
+              <div className="recent-list-container">
                 <div className="header">
                   <h2>Recent Invoices</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur</p>
                 </div>
-                <div className="recent-invoice-list">
-                 <DataItemProfile dataItem = {invoices[0]}/>
-                </div>
+                <div className="recent-list">
+                 {
+                  invoices.map((invoice,index) =>{
+                    return <DataItemProfile key={index} dataItem = {invoice}/>
+                  })
+                 }
                
+                </div>
+               <div className = "btn-container">
+                    <button className="btn btn-primary"> View All</button>
+                 </div> 
               </div>
-            </div>
+            </div> 
+
+             <div className="container">
+              <div className="recent-list-container">
+                <div className="header">
+                  <h2>Recent Customers</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur</p>
+                </div>
+                <div className="recent-list">
+                 {
+                  customers.map((customer,index) =>{
+                    return <DataItemProfile key={index} dataItem = {customer}/>
+                  })
+                 }
+               
+                </div>
+               <div className = "btn-container">
+                    <button className="btn btn-primary"> View All</button>
+                 </div> 
+              </div>
+            </div> 
             </div>
            
         

@@ -1,6 +1,9 @@
 
 .data_item_profile{
-   margin:1rem 0;
+   margin:1.5rem 0;
+   transition: all 0.2s ease-in-out;
+   
+
     .heading-profile{
         display:flex;
         align-items: center;
@@ -20,12 +23,13 @@
                 object-position: center;
                 width: 60px;
                 height:60px;
-                position:absolute;
-               
+                position:absolute; 
              }
 
-             .user-icon{
-                 color:'red'
+             .icon-user{
+                 color:$dark-white;
+                 font-size: 3rem;
+                
              }
         }
         .heading-profile-content{
@@ -68,5 +72,49 @@
            font-size: 1rem;
            font-weight: 700;
        }
+
+       #customer-id{
+           color:#717579;
+       }
+       @media(min-width: 767px)
+       {
+        border: none;
+        box-sizing: border-box;
+       }
+    }
+
+    @media(min-width: 767px)
+    {
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        align-items: center;
+        padding:1rem;
+        border-bottom: 1px solid #E5E5E5;
+        margin:0;
+      
+       
+        .heading-profile{
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+        .content{
+            grid-column: 2/span 2;
+            grid-row: 1/2;
+            display:grid;
+            grid-template-columns: repeat(2,1fr);
+            margin:0;
+            h3{
+              justify-self: center;
+            }
+
+            span{
+                justify-self: end;
+            }
+        }
+        &:hover{
+            
+            background:#F8F8F8;
+            border-bottom:1px solid transparent;
+        }
     }
 }
