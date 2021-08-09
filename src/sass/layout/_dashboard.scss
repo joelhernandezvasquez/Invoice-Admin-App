@@ -1,12 +1,110 @@
 @import '../abstracts/colors';
 @import '../abstracts/variables';
+@import '../components/logo_container';
+@import '../components/profile_user';
+@import '../components/data_item_profile';
+@import '../components/invoice_card_stats';
 @import '../utilities/container';
 @import '../utilities//utilities';
 @import '../utilities/logo';
 
 
+
 .dashboard-wrapper{
   background-color: $dark-white;
-  height:300px;
+ 
+  
+}
+.dashboard-header{
+    background-color:$pure-white;
+    height: 70px;  
+    .container{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        height:100%;
+    }
+    .invoice-btn-container{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        padding:0 0.5rem;
+        height:35px;
+        border-radius: 24px;
+        background-color: $light-orange;
+       
+        .inner-circle{
+            @extend %flex-center;
+            width: 24px;
+            height: 24px;
+            background:$pure-white;
+            border-radius: 50%;
+            margin-right: 5px;
+            .plus-icon{
+                width:50%;
+            }
+        }
+        span{
+            font-size: 12px;
+            color:$pure-white;
+            font-weight: bold;
+        }
+    }
 
 }
+.menu-icon-dashboard{
+   width:1.5rem;
+   height:1.5rem;
+   //border:1px solid red;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   .icon-bar{
+       background-color: #363853;
+       width:1.5rem;
+       height:2px;
+       border-radius: 5px;
+   }
+   .middle-bar{
+       width:18px;
+       align-self: flex-end;
+   }
+}
+.invoice-stats-container{
+    //border:1px solid red;
+    margin:30px 0;
+    .container{
+        height:100%;
+    }
+}
+    .recent-invoices-container{
+        margin:30px 0;
+        height:300px;
+        background:$pure-white;
+        border-radius: 20px; 
+        box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+         background:$pure-white;
+        border-radius: 20px; 
+        padding:var(--inner-padding);
+
+        .header{
+            h2{
+               color:#202224;
+               font-size: 1.2rem;
+               font-family:$secondary-font;
+               font-weight: 600;
+
+            }
+            p{
+                color:rgba(#717579,0.7);
+                font-size:var(--fs-paragraph);
+                font-weight: normal;
+                margin-top: 5px;
+                margin-bottom: 2rem;
+            }
+        }
+        
+}
+
+  

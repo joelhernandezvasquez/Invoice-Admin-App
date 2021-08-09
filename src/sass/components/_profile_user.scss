@@ -1,0 +1,23 @@
+
+.profile-user{
+    @extend %flex-center;
+    width:32px;
+    height:32px;
+    border-radius: 50%;
+    background:$light-orange;
+   
+    .profile-image{
+      font-size: 1.2rem;
+      color:$pure-white;
+   }
+
+    @media(min-width: 767px)
+    {
+        width:44px;
+        height: 44px;
+        .profile-image{
+            font-size: 1.8rem;
+          
+         }
+    }
+}
