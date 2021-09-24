@@ -1,4 +1,6 @@
 @import '../base/typography';
+@import '../abstracts/placeholders';
+
 .emptyField{
     color:$light-orange;
     font-size: 14px;
@@ -11,21 +13,31 @@
     
 }
 
+.title{
+    font-size: 1.2rem;
+}
+.text-message{
+    font-size: 14px;
+} 
+
 .error-message-box{
-    width: 100%;
-   background-color:#de350b;
-    border-radius: 5px;
-    color:$pure-white;
-    padding:10px;
+
+    background-color:#de350b;
+    @extend %alert-message;
 
     & > *{
         margin:5px 0;
     }
+ 
+}
 
-    .title{
-        font-size: 1.2rem;
-    }
-    .text-message{
-        font-size: 14px;
-    }
+.sucessfull-message-box{
+  
+    @extend %alert-message;
+    background-color: #008000;
+  
+   & > *{
+    margin:5px 0;
+}
+    
 }

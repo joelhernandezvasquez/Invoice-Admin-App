@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
-import authReducer from "./authReducer";
 import userReducer from "./userReducer";
+import locationReducer from "./locationReducer";
+import invoiceReducer from "./invoiceReducers";
 
 const allReducers  = combineReducers({
-    user:authReducer,
-    users:userReducer
+    users:userReducer,
+    routing:locationReducer,
+    invoice:invoiceReducer
 })
 
 export default allReducers;

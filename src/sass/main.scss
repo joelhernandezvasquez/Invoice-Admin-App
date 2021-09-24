@@ -7,13 +7,15 @@
 @import 'layout/authentication';
 @import 'layout/error_account';
 @import 'utilities/errors';
+@import 'layout/user_profile';
+@import 'layout/user_account';
+@import 'layout/invoices';
 
 
 
 body{
   position:relative;
-  
- 
+
 }
 
 :is(h1,h2,h3,a,button){
@@ -23,5 +25,4 @@ body{
 :is(p,span,label,input){
   font-family:$secondary-font;
 }
-
 

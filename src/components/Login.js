@@ -1,6 +1,6 @@
 import React from 'react';
 import history from '../history';
-import  ErrorMessage  from './ReusableComponents/ErrorMessage';
+import  Message  from './ReusableComponents/Message';
 import {useFormik} from 'formik';
 import {Link} from 'react-router-dom';
 import { loginUser } from '../actions';
@@ -77,7 +77,8 @@ const Login = ({loginUser,location}) => {
            </div> 
   
            { location.state === 'login failed' &&(
-           <ErrorMessage
+           <Message
+             type="error"
              title = "Something went wrong."
              message = "Email/Password does not match."
            />  )

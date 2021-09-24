@@ -50,3 +50,34 @@
     display:grid;
     grid-template-columns: repeat(2,1fr);
 }
+
+.primary-form-label{
+   color:$light-black;
+   font-weight: 500;
+   font-size: 0.875rem;
+   margin-bottom: 10px;
+
+   @media(min-width: 1280px)
+   {
+    font-size: 1rem;  
+   }
+}
+
+.primary-form-text-input{
+    background: #FFFFFF;
+    border:none;
+    outline: none;
+    border: 1px solid #DFE3FA;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding:0.3rem;
+    font-family: $secondary-font;
+    font-weight: 500;
+    font-size: 0.875 rem;
+    transition:border 0.2s ease-in-out;
+
+    &:focus{
+        border:1px solid $light-orange;
+
+    }
+} 

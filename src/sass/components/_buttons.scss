@@ -82,3 +82,31 @@
   padding:1rem 0
 }
 
+.btn-create-invoice{
+  display:flex;
+  align-items: center;
+  padding:0.5rem 1.3rem;
+  border:1px solid $light-orange;
+   border-radius: 20px;
+   cursor: pointer;
+     color:$light-orange;
+     font-weight: 500;
+     transition: all 0.2s ease-in-out;
+    
+     #plus-invoice-icon{
+       font-size: 1.3rem;
+     }
+     span{
+       display: inline-block;
+       margin-left:10px;
+       font-size: var(--fs-sm-text);
+     }
+
+     &:hover{
+       color:$pure-white;
+       background:$light-orange;
+       border:1px solid $pure-white;
+     }
+   
+}
+

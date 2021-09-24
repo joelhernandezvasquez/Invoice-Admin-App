@@ -1,11 +1,13 @@
 import React,{useState,useEffect} from 'react';
+import UseScreenSize from './Hooks/UseScreenSize';
 import DashboardHeader from './Dashboard/DashboardHeader';
 import InvoiceStats from './ReusableComponents/InvoiceStats';
 import DataItemProfile from './ReusableComponents/DataItemProfile';
 import {connect} from 'react-redux';
-import { userAccess } from '../actions';
+import { userAccess, fetchUsers } from '../actions';
 import history from '../history';
 import Modal from './Modal';
+import SideMenuDesktop from './SideMenuDesktop';
 import LogoIcon from '../assets/images/logo.svg';
 import TotalInvoicesIcon from '../assets/images/totalInvoiceIcon.svg';
 import PaidInvoicesIcon from '../assets/images/PaidInvoicesIcon.svg';
@@ -15,11 +17,12 @@ import GraphicBarIcon from '../assets/images/graphicBar.svg';
 import GraphicBarPaidIcon from '../assets/images/graphicBarPaid.svg';
 import GraphicBarUnpaidIcon from '../assets/images/graphicBarUnPaid.svg';
 import GraphicBarSentIcon from '../assets/images/graphicBarSent.svg';
+import { fetchCurrentLocation } from '../actions';
 
-const Dashboard = ({location,userAccess,userError}) =>{
+const Dashboard = ({location,userAccess,fetchUsers,userError,fetchCurrentLocation,routing}) =>{
     
   const[showWelcomeModal,setShowWelcomeModal] = useState(location.state);
-
+  const viewportWidth = UseScreenSize();
   const invoices = [
     {
       customer:'Chef Renata',
@@ -94,7 +97,13 @@ const Dashboard = ({location,userAccess,userError}) =>{
 
  useEffect(()=>{
    userAccess();
-   // eslint-disable-next-line
+  
+   fetchCurrentLocation(location.pathname.replace('/',''))
+   
+    // eslint-disable-next-line
+
+   // this is only for tests purposes because only Admin can see and have access to see all users other roles cannot.
+   fetchUsers();
  },[])
 
  
@@ -149,8 +158,7 @@ const Dashboard = ({location,userAccess,userError}) =>{
     }
     return (
         <div className="dashboard-wrapper">
-          
-       
+           
             {userError? renderUserFailedMessage():null} 
               {showWelcomeModal === 'signUp' ?  <Modal
               modalStyle ={'welcome-message'}
@@ -158,7 +166,12 @@ const Dashboard = ({location,userAccess,userError}) =>{
               onDissmiss = {closeWelcomeModal}
             />:null}
 
-            <DashboardHeader/> 
+            <DashboardHeader currentLocation = {routing?routing.location:''}/> 
+             {viewportWidth>=1280 &&(
+               <div className="side-menu-desktop">
+                <SideMenuDesktop/> 
+               </div>
+             )}
             <div className="invoice-stats-container">
               <div className="container">
                <InvoiceStats
@@ -191,7 +204,7 @@ const Dashboard = ({location,userAccess,userError}) =>{
               </div>
             </div>
 
-            <div className="container">
+            <div className="invoices-list container">
               <div className="recent-list-container">
                 <div className="header">
                   <h2>Recent Invoices</h2>
@@ -211,7 +224,7 @@ const Dashboard = ({location,userAccess,userError}) =>{
               </div>
             </div> 
 
-             <div className="container">
+             <div className="container customers-list">
               <div className="recent-list-container">
                 <div className="header">
                   <h2>Recent Customers</h2>
@@ -239,8 +252,11 @@ const Dashboard = ({location,userAccess,userError}) =>{
 const mapStateToProps = (state) =>{
   
   return{
-    userError:state.users.userError
+    userError:state.users.userError,
+    users:state.users.users,
+    routing:state.routing
+   
   }
 }
 
-export default connect(mapStateToProps,{userAccess}) (Dashboard);
+export default connect(mapStateToProps,{userAccess,fetchUsers,fetchCurrentLocation}) (Dashboard);

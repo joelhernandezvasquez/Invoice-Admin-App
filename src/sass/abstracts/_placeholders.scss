@@ -1,4 +1,4 @@
-
+@import '../abstracts/colors';
 
 %flex-spread{
     display: flex;
@@ -48,12 +48,26 @@
 
 %message-container{
     width: 100%;
-    height:100vh;
+    height:100%;
     background:rgba(0,0,0,0.6);
     transition: all 0.3s ease-in-out;   
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
+%alert-message{
+    width: 100%;
+    border-radius: 5px;
+    color:$pure-white;
+    padding:10px;
+    margin-bottom: 10px;
+}
+
+%delete-message{
+    width: 100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+  
 }
 
