@@ -2,11 +2,13 @@
 @import '../components/header_list';
 @import '../components/_invoice-item';
 @import '../components/pagination';
+@import '../components/emptyInvoice';
 
 .invoice-wrapper{
  background-color:$dark-white;
  height: 100vh;
  position:relative;
+
   
   .pagination-container{
      height:80px;
@@ -24,6 +26,8 @@
      }
 
   }
+
+
   @media(min-width: 1280px)
   {
    display: grid; 
