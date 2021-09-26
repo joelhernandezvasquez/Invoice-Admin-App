@@ -10,6 +10,7 @@ import ExistingAccoutError from './ExistingAccoutError'
 import UserProfile from './User/UserProfile'
 import UserAccount from './User/UserAccount'
 import Invoices from './Invoice/Invoices'
+import Customer from './Customers/Customer'
 import '../sass/main.scss'
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
         <Route path='/profile' exact component={UserProfile} />
         <Route path='/account' exact component={UserAccount} />
         <Route path='/invoices' exact component = {Invoices} />
+        <Route path = '/customers' exact component = {Customer}/>
       </Router>
     </>
   )

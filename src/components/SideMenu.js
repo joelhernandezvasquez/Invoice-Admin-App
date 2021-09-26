@@ -120,7 +120,7 @@ const SideMenu = ({active,fetchCurrentUser,currentUser}) => {
                <div className="side-bar-item"></div>
                <div className = "inner-item"> 
                <i className="fa fa-user-o" aria-hidden="true"></i>
-                   <a href="#" className="link">Customer</a>
+                   <Link to="/customers" className="link">Customer</Link>
                </div>
                
                </li>

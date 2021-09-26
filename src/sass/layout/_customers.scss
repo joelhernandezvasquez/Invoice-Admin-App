@@ -1,0 +1,30 @@
+.customer-wrapper{
+    background-color:$dark-white;
+    height: 100vh;
+    position:relative;
+
+    .customer-content{
+       
+        .search-container{
+          border:1px solid #D6D6D6;
+          height:40px;
+          border-radius: 10px;
+          display:flex;
+          align-items: center;
+          padding-left:10px;
+
+          #search-icon{
+            color:$light-white;
+            
+          }
+            input{
+            border: none;
+            margin-left: 10px;
+            height:100%;
+            width: 100%;
+            background:none;
+            outline: none;
+          }
+        }
+    }
+}

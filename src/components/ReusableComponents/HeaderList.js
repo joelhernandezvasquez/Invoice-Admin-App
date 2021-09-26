@@ -74,47 +74,50 @@ const HeaderList = ({routingName,count,filterInvoices}) => {
             </div>
 
             <div className="header-list_btn-containers">
-              <div ref={filterContainerRef} className="filter-container" onClick ={(e)=> closeFilterOption(e) }>
-                  <label> {screenWidth > 767? 'Filter by status':' Filter'}  </label>
-                  <i class={`fa fa-chevron-down dropdown-icon ${toggleFilterOptions?'rotate':''}`}  aria-hidden="true"></i>
-                  <div className={`filter-options ${toggleFilterOptions?'show':''}`}>
-                     <ul className="filter-options-items" onChange = {(e)=> selectFilterOption(e)}>
-                       <li className="item">
-                         <input type="checkbox" id="ch-draft" checked={selectedOption ==='Draft'?true:''} data-payment-status = "Draft" />
-                         <label for="ch-draft" >
-                            <svg viewBox="0 0 20 15">
-                            <path d="M0 8l2-2 5 5L18 0l2 2L7 15z" fill-rule="nonzero" />
-                            </svg>
-                         </label>
-                         <span className="label-name">Draft</span>
-                         
-                       </li>
+              {routingName ==="Invoices" &&(
+                 <div ref={filterContainerRef} className="filter-container" onClick ={(e)=> closeFilterOption(e) }>
+                 <label> {screenWidth > 767? 'Filter by status':' Filter'}  </label>
+                 <i class={`fa fa-chevron-down dropdown-icon ${toggleFilterOptions?'rotate':''}`}  aria-hidden="true"></i>
+                 <div className={`filter-options ${toggleFilterOptions?'show':''}`}>
+                    <ul className="filter-options-items" onChange = {(e)=> selectFilterOption(e)}>
+                      <li className="item">
+                        <input type="checkbox" id="ch-draft" checked={selectedOption ==='Draft'?true:''} data-payment-status = "Draft" />
+                        <label for="ch-draft" >
+                           <svg viewBox="0 0 20 15">
+                           <path d="M0 8l2-2 5 5L18 0l2 2L7 15z" fill-rule="nonzero" />
+                           </svg>
+                        </label>
+                        <span className="label-name">Draft</span>
+                        
+                      </li>
 
-                       <li className="item">
-                         <input type="checkbox" id="ch-pending" checked={selectedOption ==='Pending'?true:''} data-payment-status = "Pending" />
-                         <label for="ch-pending" >
-                            <svg viewBox="0 0 20 15">
-                            <path d="M0 8l2-2 5 5L18 0l2 2L7 15z" fill-rule="nonzero" />
-                            </svg>
-                         </label>
-                         <span className="label-name">Pending</span>
-                         
-                       </li>
+                      <li className="item">
+                        <input type="checkbox" id="ch-pending" checked={selectedOption ==='Pending'?true:''} data-payment-status = "Pending" />
+                        <label for="ch-pending" >
+                           <svg viewBox="0 0 20 15">
+                           <path d="M0 8l2-2 5 5L18 0l2 2L7 15z" fill-rule="nonzero" />
+                           </svg>
+                        </label>
+                        <span className="label-name">Pending</span>
+                        
+                      </li>
 
-                       <li className="item">
-                         <input type="checkbox" id="ch-paid" checked={selectedOption ==='Paid'?true:''}  data-payment-status = "Paid"/>
-                         <label for="ch-paid" >
-                            <svg viewBox="0 0 20 15">
-                            <path d="M0 8l2-2 5 5L18 0l2 2L7 15z" fill-rule="nonzero" />
-                            </svg>
-                         </label>
-                         <span className="label-name">Paid</span>
-                         
-                       </li>
-                     </ul>
-                  </div>
-              </div>
+                      <li className="item">
+                        <input type="checkbox" id="ch-paid" checked={selectedOption ==='Paid'?true:''}  data-payment-status = "Paid"/>
+                        <label for="ch-paid" >
+                           <svg viewBox="0 0 20 15">
+                           <path d="M0 8l2-2 5 5L18 0l2 2L7 15z" fill-rule="nonzero" />
+                           </svg>
+                        </label>
+                        <span className="label-name">Paid</span>
+                        
+                      </li>
+                    </ul>
+                 </div>
+             </div>
 
+              )}
+              
               <Link to="" className="create-btn">
                 <div className="btn-container">
                     <div className="plus-sign-container">
