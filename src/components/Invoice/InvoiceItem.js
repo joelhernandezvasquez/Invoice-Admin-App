@@ -1,8 +1,9 @@
 import React from 'react';
+import useFormatDate from '../Hooks/useFormatDate';
 
 const InvoiceItem = ({invoiceData}) => {
     const{invoiceNumber,customer,dueDate,totalAmount,status} = invoiceData;
-
+    const formatDate = useFormatDate(dueDate);
     const getStyle = () =>{
         if(status ==="Paid"){
             return{
@@ -56,11 +57,11 @@ const InvoiceItem = ({invoiceData}) => {
           }
     }
 
-    const formatDate = (date) =>{
+   /*  const formatDate = (date) =>{
       const dueDate = new Date(date);
       return `${dueDate.getDate()} ${dueDate.toLocaleString('default', { month: 'long' })} ${dueDate.getFullYear()}`
     }
-
+ */
     return (
         <div className="invoice-item">
           
@@ -69,7 +70,7 @@ const InvoiceItem = ({invoiceData}) => {
           </div>
 
           <div className="invoice-item-date">
-            <span> Due {formatDate(dueDate)}</span>
+            <span> Due {formatDate.toString()}</span>
             
           </div> 
           

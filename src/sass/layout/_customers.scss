@@ -1,3 +1,6 @@
+
+@import '../components/customerItem';
+
 .customer-wrapper{
     background-color:$dark-white;
     height: 100vh;
@@ -12,9 +15,10 @@
           display:flex;
           align-items: center;
           padding-left:10px;
+          transition:all 0.2s ease-in-out;
 
           #search-icon{
-            color:$light-white;
+            color:rgba($light-black,0.3);
             
           }
             input{
@@ -24,7 +28,14 @@
             width: 100%;
             background:none;
             outline: none;
+            font-size: 0.875rem;
+            color:$light-gray;
+            &::placeholder{
+              font-size: 0.875rem;
+            }
+          
           }
+        
         }
     }
 }

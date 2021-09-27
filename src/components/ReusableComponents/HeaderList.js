@@ -74,7 +74,7 @@ const HeaderList = ({routingName,count,filterInvoices}) => {
             </div>
 
             <div className="header-list_btn-containers">
-              {routingName ==="Invoices" &&(
+              {routingName ==="Invoice" &&(
                  <div ref={filterContainerRef} className="filter-container" onClick ={(e)=> closeFilterOption(e) }>
                  <label> {screenWidth > 767? 'Filter by status':' Filter'}  </label>
                  <i class={`fa fa-chevron-down dropdown-icon ${toggleFilterOptions?'rotate':''}`}  aria-hidden="true"></i>

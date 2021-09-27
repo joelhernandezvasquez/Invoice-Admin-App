@@ -33,8 +33,8 @@ const App = () => {
         />
         <Route path='/profile' exact component={UserProfile} />
         <Route path='/account' exact component={UserAccount} />
-        <Route path='/invoices' exact component = {Invoices} />
-        <Route path = '/customers' exact component = {Customer}/>
+        <Route path='/invoice' exact component = {Invoices} />
+        <Route path = '/customer' exact component = {Customer}/>
       </Router>
     </>
   )

@@ -102,7 +102,7 @@ const SideMenu = ({active,fetchCurrentUser,currentUser}) => {
                <div className="side-bar-item"></div>
                <div className="inner-item">
                <i className="fa fa-file-text-o" aria-hidden="true"></i>
-                   <Link to="/invoices" className="link">Invoice</Link>
+                   <Link to="/invoice" className="link">Invoice</Link>
                </div>
                
                </li>
@@ -120,7 +120,7 @@ const SideMenu = ({active,fetchCurrentUser,currentUser}) => {
                <div className="side-bar-item"></div>
                <div className = "inner-item"> 
                <i className="fa fa-user-o" aria-hidden="true"></i>
-                   <Link to="/customers" className="link">Customer</Link>
+                   <Link to="/customer" className="link">Customer</Link>
                </div>
                
                </li>
