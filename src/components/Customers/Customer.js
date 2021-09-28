@@ -4,6 +4,7 @@ import UseScreenSize from '../Hooks/UseScreenSize';
 import SideMenuDesktop from '../SideMenuDesktop';
 import HeaderList from '../ReusableComponents/HeaderList';
 import CustomerItem from './CustomerItem';
+import Pagination from '../ReusableComponents/Pagination';
 import { connect } from 'react-redux';
 import { fetchCurrentLocation } from '../../actions';
 
@@ -29,7 +30,7 @@ const Customer = ({location,routing,fetchCurrentLocation}) => {
   {
     name:'Brian Johnson',
     email:'brianjohnson@example.com',
-    amountDue:'$295',
+    amountDue:295,
     register:'16 Nov 2020',
     status:'Inactive'
   }
@@ -57,7 +58,7 @@ const Customer = ({location,routing,fetchCurrentLocation}) => {
              )}
            {}
            <div className="customer-content container">
-           <HeaderList routingName="Customers" count={6}/>
+           <HeaderList routingName="Customer" count={6}/>
            <div  ref={searchInputRef} className="search-container" onBlur = {() => removeFocus()}>
            <i id="search-icon" className="fa fa-search" aria-hidden="true"></i>
                <input type="text" value = {searchInput} 
@@ -67,8 +68,17 @@ const Customer = ({location,routing,fetchCurrentLocation}) => {
 
                  />
            </div>
-           <CustomerItem customerData = {customer[0]}/>
-             
+        
+
+           { customer.map(customer =>{
+             return <CustomerItem customerData = {customer}/>
+           })}
+         
+             <div className="pagination-container">
+             {screenWidth < 767?'':<p>{`Showing ${5} from ${20} data`}</p>}
+                <Pagination totalItem={20} rangePerPage={5}/>
+             </div>
+            
           </div>
         </div>
     )

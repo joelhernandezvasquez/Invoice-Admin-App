@@ -9,23 +9,6 @@
  height: 100vh;
  position:relative;
 
-  
-  .pagination-container{
-     height:80px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-
-     @media(min-width:767px)
-     {
-      justify-content: space-between;
-      p {
-           color:$light-gray;
-          
-        }
-     }
-
-  }
 
 
   @media(min-width: 1280px)

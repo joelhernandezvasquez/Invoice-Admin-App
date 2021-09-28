@@ -80,4 +80,22 @@
         border:1px solid $light-orange;
 
     }
-} 
+}
+
+.pagination-container{
+    height:80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media(min-width:767px)
+    {
+     justify-content: space-between;
+     p {
+          color:$light-gray;
+          font-size:0.875rem;
+         
+       }
+    }
+
+ }
