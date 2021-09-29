@@ -129,6 +129,39 @@ export const selectAccountItems = (item) =>{
     }
 }
 
+export const fetchCustomers = () =>{
+  return async(dispatch) =>{
+    try{
+      const response = await axios.get('/api/get/customers');
+      dispatch({type:'FETCH_CUSTOMERS',payload:response.data})
+    }
+    catch(err)
+    {
+     dispatch({type:'ERROR_CUSTOMER',payload:err})
+    }
+  }
+}
+
+export const filterCustomers = (term)=>{
+ console.log(term)
+  try{
+    return{type:'FILTER_CUSTOMER',payload:term}
+  }
+  catch(err)
+  {
+    return{type:'ERROR_CUSTOMER',payload:err}
+  }
+}
+
+export const clearCustomerFilter = () =>{
+   try{
+     return{ type:'CLEAR_CUSTOMER_FILTER'}
+   }
+   catch(err)
+   {
+     console.log(err);
+   }
+}
 export const fetchInvoices  = () =>{
   return async(dispatch) =>{
     try{
@@ -143,12 +176,12 @@ export const fetchInvoices  = () =>{
 
 export const filterInvoices = (status) =>{
   
-  return async(dispatch ) =>{
+ 
     try{
-      dispatch({type:'FILTER_INVOICES',payload:status})
+      return{type:'FILTER_INVOICES',payload:status}
     }
     catch(err){
       console.log(err);
     }
-  }
+  
 }

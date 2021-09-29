@@ -4,8 +4,8 @@ import UseScreenSize from '../Hooks/UseScreenSize';
 
 const CustomerItem = ({customerData}) => {
    
-    const{name,email,amountDue,register,status} = customerData;
-    const registerOn = useFormatDate(register);
+    const{name,email,amountDue,registerDate,status} = customerData;
+    const registerOn = useFormatDate(registerDate);
     const screenWidth = UseScreenSize();
     
 
