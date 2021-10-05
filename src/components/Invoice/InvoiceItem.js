@@ -57,11 +57,7 @@ const InvoiceItem = ({invoiceData}) => {
           }
     }
 
-   /*  const formatDate = (date) =>{
-      const dueDate = new Date(date);
-      return `${dueDate.getDate()} ${dueDate.toLocaleString('default', { month: 'long' })} ${dueDate.getFullYear()}`
-    }
- */
+   
     return (
         <div className="invoice-item">
           

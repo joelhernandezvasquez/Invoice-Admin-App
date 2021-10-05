@@ -15,6 +15,13 @@ export const customerReducer = (state = initialState,action) =>{
            }
        }
 
+       case'FETCH_CUSTOMER':{
+           return{
+               ...state,
+               customers:action.payload
+           }
+       }
+
        case 'FILTER_CUSTOMER':{
            return{
                ...state,

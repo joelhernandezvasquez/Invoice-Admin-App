@@ -97,5 +97,36 @@
          
        }
     }
+ }
+
+ .menu-actions{
+        height: 91px;
+        background:$pure-white;
+        box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+        border-radius: 8px;
+        padding:0 1.5rem;
+        
 
  }
+
+ .label-title{
+     color:$light-black;
+     font-weight: 500;
+ }
+ .label-input{
+     color:$light-gray;
+ }
+ :is(.label-input,.label-title){font-size:0.875rem;}
+
+ .address-info{
+     display:flex;
+     flex-direction: column;
+ }
+
+ .action-btn-container{
+     background:$pure-white;
+ }
+
+ 
+
+

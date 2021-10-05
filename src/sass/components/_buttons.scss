@@ -109,4 +109,33 @@
      }
    
 }
+.action-btn{
+  padding:12px 32px;
+  border-radius: 40px;
+  border:none;
+  cursor: pointer;
+  font-family: $secondary-font;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+.btn-delete{
+  
+  background:hsl(0, 80%, 53%);
+  color:$pure-white;
+  transition:all 0.2s ease-in-out;
+  &:hover{
+    background:hsl(0, 80%, 63%);
+  }
+}
+
+.btn-edit{
+ 
+  background:hsl(11, 99%, 65%);
+  color:$pure-white;
+  transition:all 0.2s ease-in-out;
+  &:hover{
+    background:hsl(11, 99%, 75%);
+  }
+}
+
 

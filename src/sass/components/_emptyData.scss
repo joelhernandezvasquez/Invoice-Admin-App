@@ -1,11 +1,11 @@
-.empty-invoice-container {
+.empty-data-container {
   //border:1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transform: translateY(30%);
-  .empty-invoice-illustration {
+  .empty-data-illustration {
     width: 194px;
     height: 160px;
 
@@ -14,13 +14,13 @@
       height: 200px;
     }
   }
-  .empty-invoice-content {
+  .empty-data-content {
     margin-top: 2rem;
     text-align: center;
     display: flex;
     flex-direction: column;
 
-    .empty-invoice-content-title {
+    .empty-data-content-title {
       color: $light-black;
     }
     .content-description-container {
@@ -31,7 +31,7 @@
       @media (min-width: 767px) {
         width: 60%;
       }
-      .empty-invoice-content-description {
+      .empty-data-content-description {
         font-size: 0.875rem;
         color: $light-gray;
         font-weight: 400;

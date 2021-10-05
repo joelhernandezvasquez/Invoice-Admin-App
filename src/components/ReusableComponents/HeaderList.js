@@ -6,7 +6,7 @@ import UseScreenSize from '../Hooks/UseScreenSize';
 import { connect } from 'react-redux';
 import { filterInvoices } from '../../actions';
 
-const HeaderList = ({routingName,count,filterInvoices}) => {
+const HeaderList = ({routingName,link,count,filterInvoices}) => {
   
   const [toggleFilterOptions,toogleFilter] = useToogle(false);
   const [selectedOption,setSelectedOption] = useState(null);
@@ -57,20 +57,20 @@ const HeaderList = ({routingName,count,filterInvoices}) => {
       toogleFilter();
      }
   }
-
+  
   const renderInvoiceCount = () =>{
-    if(count < 2)
-     return 'There is '
-     else{
-       return 'There are '
-     }
+   if (count == 0) return 'No '
+   if(count < 2) return 'There is '
+    
+  return 'There are '
+     
   }
   return (
         
         <div className="header-list">
             <div className="header-list_routing-info">
               <h2 className="routing-name">{routingName}</h2>
-              <p className="count-info"> <span> {screenWidth > 767? renderInvoiceCount():''}  {count} </span> {routingName}</p>
+              <p className="count-info"> <span> {screenWidth > 767? renderInvoiceCount():(count < 1 &&'No')}  { count>0? count:''} </span> {routingName}</p>
             </div>
 
             <div className="header-list_btn-containers">
@@ -118,7 +118,7 @@ const HeaderList = ({routingName,count,filterInvoices}) => {
 
               )}
               
-              <Link to="" className="create-btn">
+              <Link to={link} className="create-btn">
                 <div className="btn-container">
                     <div className="plus-sign-container">
                       <i class="fa fa-plus" id="plus-sign" aria-hidden="true"></i>
@@ -132,6 +132,7 @@ const HeaderList = ({routingName,count,filterInvoices}) => {
 }
 HeaderList.propTypes = {
     routingName:PropTypes.string.isRequired,
+    link:PropTypes.string.isRequired,
     count:PropTypes.number.isRequired
 }
 const mapStateToProps = (state) =>{

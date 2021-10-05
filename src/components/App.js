@@ -11,6 +11,8 @@ import UserProfile from './User/UserProfile'
 import UserAccount from './User/UserAccount'
 import Invoices from './Invoice/Invoices'
 import Customer from './Customers/Customer'
+import ViewCustomer from './Customers/ViewCustomer';
+import CreateCustomer from './Customers/CreateCustomer'
 import '../sass/main.scss'
 
 const App = () => {
@@ -35,6 +37,8 @@ const App = () => {
         <Route path='/account' exact component={UserAccount} />
         <Route path='/invoice' exact component = {Invoices} />
         <Route path = '/customer' exact component = {Customer}/>
+        <Route path='/customer/:id' exact component = {ViewCustomer}/>
+        <Route path='/add/customer' exact component={CreateCustomer}/>
       </Router>
     </>
   )

@@ -1,0 +1,32 @@
+
+.main-heading{
+    color:$light-black;
+}
+
+.sub-heading{
+    color:$light-orange;
+    font-size: 1rem;
+    font-family: $secondary-font;
+    margin-bottom: 8px;
+    font-weight: 400;
+    
+}
+
+
+.main-form{
+    //background:$pure-white;
+    font-family: $secondary-font;
+}
+
+.form-input-container{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    font-size: 0.875rem;
+
+    label{
+        color:$light-gray;
+        text-transform: capitalize;
+        
+    }
+}

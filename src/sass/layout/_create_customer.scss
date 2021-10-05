@@ -1,0 +1,15 @@
+
+@import '../components/-main-form.scss';
+
+.create-customer-wrapper{
+  background:$pure-white;
+  height:100vh;
+
+  .create-customer-content{
+    padding-top: 104px;
+
+    .main-heading-title{
+        margin:24px 0;
+    }
+  }
+}

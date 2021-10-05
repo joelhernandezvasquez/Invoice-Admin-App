@@ -3,9 +3,10 @@ import DashboardHeader from '../Dashboard/DashboardHeader';
 import HeaderList from '../ReusableComponents/HeaderList';
 import InvoiceItem from './InvoiceItem';
 import SideMenuDesktop from '../SideMenuDesktop';
-import EmptyInvoice from './EmptyInvoice';
+import EmptyData from '../ReusableComponents/EmptyData';
 import Pagination from '../ReusableComponents/Pagination';
 import UseScreenSize from '../Hooks/UseScreenSize';
+import InvoiceImg from '../../assets/images/email_empty_invoice.svg';
 import { connect } from 'react-redux'
 import {fetchCurrentLocation,fetchInvoices } from '../../actions'
 
@@ -56,7 +57,7 @@ const Invoices = ({location,fetchCurrentLocation,routing,fetchInvoices,invoices,
            <div className="invoice-content container">
            <HeaderList routingName="Invoices" count={ renderInvoiceCount()}/>
             
-            {invoices.length > 0?loadInvoiceData():<EmptyInvoice/> }
+            {invoices.length > 0?loadInvoiceData():<EmptyData description = {"an invoice"} illustration={InvoiceImg}/> }
 
             {invoices.length > 0 && (
               <div className="pagination-container">

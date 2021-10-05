@@ -38,4 +38,4 @@ const DashboardHeader = ({ currentLocation }) => {
   )
 }
 
-export default DashboardHeader
+export default DashboardHeader;

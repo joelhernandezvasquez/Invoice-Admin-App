@@ -1,14 +1,13 @@
-import {useState,useEffect} from 'react';
 
-const useFormatDate = (defaultDate) => {
-  const [dateFormat,setDate] = useState(new Date(defaultDate));
+
+const useFormatDate = () => {
  
-   useEffect(() => {
-  setDate(`${dateFormat.getDate()} ${dateFormat.toLocaleString('default', { month: 'long' })} ${dateFormat.getFullYear()}`)
-
-}, []) 
+const setDateFormat = (value) =>{
+  const dateFormat = new Date(value);
+  return (`${dateFormat.getDate()} ${dateFormat.toLocaleString('default', { month: 'long' })} ${dateFormat.getFullYear()}`)
+}
   
-  return dateFormat;
+  return [setDateFormat];
 }
 
 export default useFormatDate;

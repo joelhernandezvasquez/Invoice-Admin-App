@@ -1,11 +1,12 @@
-import React from 'react';
+
 import useFormatDate from '../Hooks/useFormatDate';
 import UseScreenSize from '../Hooks/UseScreenSize';
+import {Link} from 'react-router-dom';
 
 const CustomerItem = ({customerData}) => {
    
-    const{name,email,amountDue,registerDate,status} = customerData;
-    const registerOn = useFormatDate(registerDate);
+    const{_id,name,email,amountDue,registerDate,status} = customerData;
+    const [setDateFormat] = useFormatDate();
     const screenWidth = UseScreenSize();
     
 
@@ -55,8 +56,10 @@ const CustomerItem = ({customerData}) => {
    
     }
     return (
-        <div className="customer-item">
-          
+        
+        
+        <Link to = {`/customer/${_id}`} className="customer-item">
+       
              <div className="customer-heading">
                 <div className="avatar-name">
                 <span>{getName()}</span>
@@ -70,7 +73,7 @@ const CustomerItem = ({customerData}) => {
 
           <div className="customer-register-date">
              <h2 className="customer-title"> Register On</h2>
-             <span>{registerOn.toString()}</span>  
+             <span>{setDateFormat(registerDate)}</span>  
           
           </div> 
              
@@ -86,13 +89,10 @@ const CustomerItem = ({customerData}) => {
           <div className="customer-status">
           <h2  className="customer-title"> Status</h2>
           <span  style = {getCustomerColor()}>   {status}</span>
-            {/* <div className="inner-status" style = {getStyle()}>
-                <div className="circle" style = {getStatusColor()}></div>
-                 <span style = {getCustomerColor()}>{status}</span>
-                </div>
-          </div>   */}
+          
         </div>
-        </div>
+       
+        </Link>
     )
 }
 

@@ -60,7 +60,6 @@ export const updateUserPassword = (id,password) =>{
     try{
       console.log("hello from the action")
       const response = await axios.put(`/api/update_password`,{_id:id,newPassword:password});
-      console.log(response.data);
       dispatch({type:'UPDATE_PASSWORD',payload:response.data})
       return status =  response.status;
     }
@@ -79,7 +78,6 @@ export const deleteUser = (id) =>{
       const response = await axios.delete(`/api/delete_user/${id}`);
       dispatch({type:'DELETE_USER', payload:response.data}) 
       status = response.status;
-      console.log(status);
       return status;
     }
     catch(err)
@@ -138,6 +136,18 @@ export const fetchCustomers = () =>{
     catch(err)
     {
      dispatch({type:'ERROR_CUSTOMER',payload:err})
+    }
+  }
+}
+
+export const fetchCustomer = (id) =>{
+  return async(dispatch) =>{
+    try{
+      const response = await axios.get(`/api/customer/${id}`);
+      dispatch({type:'FETCH_CUSTOMER',payload:response.data})
+    }
+    catch(err){
+      dispatch({type:'ERROR_CUSTOMER',payload:err})
     }
   }
 }
