@@ -1,26 +1,33 @@
 
-import{useEffect} from 'react';
+import{useEffect,useState} from 'react';
 import DashboardHeader from '../Dashboard/DashboardHeader';
 import SideMenuDesktop from '../SideMenuDesktop';
 import ReturnBackLink from "../ReusableComponents/ReturnBackLink";
 import ShowStatus from "../ReusableComponents/ShowStatus";
 import UseScreenSize from '../Hooks/UseScreenSize';
 import useFormatDate from '../Hooks/useFormatDate';
+import Modal from '../Modal';
+import useModal from '../Hooks/useModal';
+import history from '../../history';
+import DeleteConfirmation from '../ReusableComponents/DeleteConfirmation';
 import{Link} from 'react-router-dom';
-import { fetchCustomer } from '../../actions';
+import { fetchCustomer,deleteCustomer } from '../../actions';
 import { connect } from 'react-redux';
 import React from 'react';
+import ConfirmationMessage from '../ReusableComponents/ConfirmationMessage';
 
-const ViewCustomer = ({location,match,routing,fetchCurrentLocation,fetchCustomer,customer}) => {
+const ViewCustomer = ({location,match,routing,fetchCurrentLocation,fetchCustomer,deleteCustomer,customer}) => {
   
   const screenWidth = UseScreenSize();
-   const [setDateFormat] = useFormatDate();
+  const [setDateFormat] = useFormatDate();
+  const [isCustomerModalOpen,openModal,closeModal]  = useModal(false);
+  const [isCustomerDeleted,openCustomerDeleted,closeCustomerDeleted] = useModal(false);
   
    useEffect(() => {
     
     fetchCustomer(match.params.id);
-   
    }, [])
+
 
    const getName = () =>{
      if(customer.name){
@@ -32,12 +39,29 @@ const ViewCustomer = ({location,match,routing,fetchCurrentLocation,fetchCustomer
     }
   }
 
+  const onDeleteCustomer = async () =>{
+    const status = await  deleteCustomer(customer._id);
+
+    if(status===200)
+    {
+      closeModal();
+      openCustomerDeleted()
+
+      setTimeout(() => {
+        closeCustomerDeleted();
+        history.push('/customer')
+      },3000);
+      
+    }
+
+    
+  }
+
     return (
 
 
         <div className="customer-view-wrapper">
-
-          <DashboardHeader currentLocation={"View Customer"} />
+         <DashboardHeader currentLocation={"View Customer"} />
           {screenWidth >= 1280 && (
         <div className='side-menu-desktop'>
           <SideMenuDesktop />
@@ -51,10 +75,33 @@ const ViewCustomer = ({location,match,routing,fetchCurrentLocation,fetchCustomer
              
             
              <div id="menu-action-links">
-                <Link className="action-btn btn-edit">Edit</Link>
-                  <Link className="action-btn btn-delete">Delete</Link>
+                <Link to={`/edit/customer/${customer._id}`} className="action-btn btn-edit">Edit</Link>
+                <button className="action-btn btn-delete" onClick = {()=> openModal()}>Delete</button>
              </div>
             </div>
+
+            {isCustomerModalOpen? 
+              <Modal 
+                modalStyle={'delete-user-modal'}
+              content = { <DeleteConfirmation 
+                           message={'Are you sure you want to delete this Customer? This action cannot be undone.'}
+                           cancelAction = {closeModal}
+                           deleteAction={onDeleteCustomer}
+                          />}
+              onDissmiss = {closeModal}
+              />
+              :null
+             }
+
+             {isCustomerDeleted?
+                <Modal 
+                modalStyle={'delete-user-modal'}
+                 content = { <ConfirmationMessage type="success" message={"Customer has been deleted."}
+                          />}
+              onDissmiss = {closeModal}
+              />
+              :null
+             }
 
             <div className="customer-info">
                <div className="customer-avatar">
@@ -64,8 +111,8 @@ const ViewCustomer = ({location,match,routing,fetchCurrentLocation,fetchCustomer
                   <h2 className="customer-name"> {customer.name} </h2>
                </div>
                <div className="customer-id-container customer-input">
-                 <span className="label-title">Customer ID</span> 
-                 <span className="label-input">#{customer._id}</span>
+                 <span className="label-title">Customer ID:</span> 
+                 <span className="label-input">{customer._id}</span>
                </div>
  
                  <div className="customer-email-container customer-input">
@@ -106,18 +153,18 @@ const ViewCustomer = ({location,match,routing,fetchCurrentLocation,fetchCustomer
              </div>
 
              <footer>
-              <Link className="action-btn btn-edit">Edit</Link>
-              <Link className="action-btn btn-delete">Delete</Link>
-             </footer>
+              <Link to={`/edit/customer/${customer._id}`} className="action-btn btn-edit">Edit</Link>
+              <button className="action-btn btn-delete" onClick = {()=> openModal()}>Delete</button>
+             </footer> 
           </div>
-        </div>
+         </div>
     )
 }
 
 const mapStateToProps = state => {
-    return {
-      customer:state.customer.customers
-    }
+   
+  return {
+      customer:state.customer.selectedCustomer}
   }
 
-export default connect(mapStateToProps,{fetchCustomer}) (ViewCustomer);
+export default connect(mapStateToProps,{fetchCustomer,deleteCustomer}) (ViewCustomer);

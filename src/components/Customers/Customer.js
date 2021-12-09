@@ -28,9 +28,12 @@ const Customer = ({
   const screenWidth = UseScreenSize()
   const [searchInput, setSearch] = useState(null)
   const searchInputRef = useRef(null);
-  
-  
+  const [customerIndex,setCustomerIndex] = useState({
+    start:0,
+    end:0
+  })
  
+  let countCurrentCustomerRendered =0;
   useEffect(() => {
     fetchCurrentLocation(location.pathname.replace('/', ''))
   }, [])
@@ -68,13 +71,38 @@ const Customer = ({
     searchInputRef.current.style.border = `1px solid #D6D6D6`
   }
 
+  const updateCustomerIndex =(currentPaginatedNumber) =>{
+    let startIndex,endIndex;
+  
+     if(currentPaginatedNumber !== 1)
+     {
+       endIndex = currentPaginatedNumber * 5  ;
+       startIndex = endIndex - 5
+       setCustomerIndex({ start:endIndex-5,end:endIndex})
+     }
+     else{
+      startIndex = 0
+      endIndex = startIndex + 5
+      setCustomerIndex({start:0,end:startIndex + 5 })
+     }
+    
+  }
+
+  
+
   const loadCustomer = () => {
+    let customerData = [];
     if (customerFilter.length < 1) {
-      return customers.map(customer => {
+      
+        customerData = customers.slice(customerIndex.start,customerIndex.end)
+        countCurrentCustomerRendered = customerData.length
+        return customerData.map(customer => {
         return <CustomerItem customerData={customer} />
       })
-    }
 
+     
+    }
+    countCurrentCustomerRendered = customerFilter.length;
     return customerFilter.map(customer => {
       return <CustomerItem customerData={customer} />
     })
@@ -82,6 +110,7 @@ const Customer = ({
  const getCustomerCount = ()=>{
     if(customerFilter.length > 0)
     { 
+    
       return customerFilter.length;
     } 
 
@@ -113,13 +142,12 @@ const Customer = ({
           />
         </div>
 
-        
-        { customers.length > 0? loadCustomer():<EmptyData description = {'a customer'} illustration = {CustomerImg}/>  }
+        {customers.length > 0? loadCustomer():<EmptyData description = {'a customer'} illustration = {CustomerImg}/>  }
 
         {customers.length > 0 &&(
         <div className='pagination-container'>
-          {screenWidth < 767 ? '' : <p>{`Showing ${5} from ${20} data`}</p>}
-          <Pagination totalItem={20} rangePerPage={5} />
+          {screenWidth < 767 ? '' : <p>{`Showing ${countCurrentCustomerRendered} of ${customers.length} Customers`}</p>}
+          <Pagination totalItem={getCustomerCount()} rangePerPage={5} setPage = {updateCustomerIndex} />
         </div> 
         )
        }

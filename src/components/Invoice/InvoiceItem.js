@@ -3,7 +3,7 @@ import useFormatDate from '../Hooks/useFormatDate';
 
 const InvoiceItem = ({invoiceData}) => {
     const{invoiceNumber,customer,dueDate,totalAmount,status} = invoiceData;
-    const formatDate = useFormatDate(dueDate);
+    const [formatDate] = useFormatDate();
     const getStyle = () =>{
         if(status ==="Paid"){
             return{
@@ -66,7 +66,7 @@ const InvoiceItem = ({invoiceData}) => {
           </div>
 
           <div className="invoice-item-date">
-            <span> Due {formatDate.toString()}</span>
+            <span> Due {formatDate(dueDate)}</span>
             
           </div> 
           

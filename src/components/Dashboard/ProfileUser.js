@@ -28,8 +28,8 @@ const ProfileUser = ({fetchCurrentUser,currentUser}) => {
 
      const renderProfilePicture = () =>{
       if(currentUser){
-        console.log("inside the current user rendering the user avatar");
-        console.log(currentUser.avatar)
+        //console.log("inside the current user rendering the user avatar");
+       // console.log(currentUser.avatar)
         return !currentUser.avatar?<BsFillPersonFill className="profile-image" />:<img src={currentUser.avatar} alt="user image"/>
       }
       }

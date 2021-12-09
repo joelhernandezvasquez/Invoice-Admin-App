@@ -12,7 +12,7 @@
 @import 'layout/invoices';
 @import 'layout/customers';
 @import 'layout/view_customer';
-@import 'layout/create_customer';
+@import 'layout/create_model';
 
 
 
@@ -29,3 +29,9 @@ body{
   font-family:$secondary-font;
 }
 
+.overlay{
+  // width:50%;
+  // height:100vh;
+  // background:black;
+  // margin:0;
+}
