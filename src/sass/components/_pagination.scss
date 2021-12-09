@@ -10,8 +10,12 @@
         .arrow{
            color:$light-orange;
            margin:0 1rem;
+           cursor: pointer;
         }
-        
+        .disactive.arrow{
+            color:rgba($light-orange,0.4);
+            cursor:no-drop;
+        }
         .item{
             margin:0 0.5rem;
             font-family: $secondary-font;

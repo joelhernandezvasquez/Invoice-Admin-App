@@ -107,6 +107,17 @@
         }
       }
 
+      .customer-id-container {
+       
+
+        .label-input {
+          font-size: 0.75rem;
+          word-break: break-word;
+          margin-left: 5px;
+          
+        }
+      }
+
       .customer-address-container {
         padding-top: 15px;
         height: 100px;
@@ -164,6 +175,7 @@
 
           .label-input {
             font-size: 1rem;
+            word-break: break-word;
             
           }
         }

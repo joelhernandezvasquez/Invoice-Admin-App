@@ -48,21 +48,21 @@ const CustomerItem = ({customerData}) => {
 
     
 
-    const getName = () =>{
-    let firstInitial = name.slice(0,1);
-    let secondInitalPosition = name.indexOf(" ");
+     const getName = () =>{
+     const firstInitial = name.slice(0,1);
+     const secondInitalPosition = name.indexOf(" ");
     
-    return(`${firstInitial}${name[secondInitalPosition+1]}`)
+    return(`${firstInitial}${name[secondInitalPosition+1]}`) 
    
-    }
+    } 
     return (
         
         
         <Link to = {`/customer/${_id}`} className="customer-item">
-       
+  
              <div className="customer-heading">
                 <div className="avatar-name">
-                <span>{getName()}</span>
+                <span>{getName()}</span> 
               </div>
               
              <div className="customer-name"> 

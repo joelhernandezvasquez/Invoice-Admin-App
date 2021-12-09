@@ -138,4 +138,28 @@
   }
 }
 
+.btn-create-item{
+  width: 90%;
+  padding:14px 24px;
+  margin-top:16px;
+  background:hsl(11, 99%, 65%);
+  color:$pure-white;
+  transition:all 0.2s ease-in-out;
+  border-radius:24px;
+  font-weight: 400;
+  font-family: $secondary-font;
+  font-size: 0.875rem;
+ 
+  &:hover{
+    background:hsl(11, 99%, 75%);
+  }
+
+  @media(min-width: 767px)
+  {
+    width:400px;
+  }
+}
+
+
+
 

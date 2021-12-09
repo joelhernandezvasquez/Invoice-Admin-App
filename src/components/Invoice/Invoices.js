@@ -55,14 +55,14 @@ const Invoices = ({location,fetchCurrentLocation,routing,fetchInvoices,invoices,
              )}
            {}
            <div className="invoice-content container">
-           <HeaderList routingName="Invoices" count={ renderInvoiceCount()}/>
+           <HeaderList routingName="Invoices" link={'/add/invoice'} count={ renderInvoiceCount()} overlay={true}/>
             
             {invoices.length > 0?loadInvoiceData():<EmptyData description = {"an invoice"} illustration={InvoiceImg}/> }
 
             {invoices.length > 0 && (
               <div className="pagination-container">
               {screenWidth < 767?'':<p>{`Showing ${5} from ${renderInvoiceCount()} data`}</p>}
-               <Pagination totalItem={20} rangePerPage={5}/>
+               {/* <Pagination totalItem={20} rangePerPage={5}/> */}
               </div>
             )}
          

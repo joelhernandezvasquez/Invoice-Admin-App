@@ -3,6 +3,9 @@
 @import '../components/_invoice-item';
 @import '../components/pagination';
 @import '../components/emptyData';
+@import '../components/invoice-form';
+@import '../components/customer_dropdown';
+@import '../components/menu-invoice-footer';
 
 .invoice-wrapper{
  background-color:$dark-white;

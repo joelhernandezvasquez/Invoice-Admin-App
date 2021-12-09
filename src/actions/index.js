@@ -58,7 +58,7 @@ export const updateUserPassword = (id,password) =>{
   let status = null;
   return async (dispatch) =>{
     try{
-      console.log("hello from the action")
+    
       const response = await axios.put(`/api/update_password`,{_id:id,newPassword:password});
       dispatch({type:'UPDATE_PASSWORD',payload:response.data})
       return status =  response.status;
@@ -153,7 +153,6 @@ export const fetchCustomer = (id) =>{
 }
 
 export const filterCustomers = (term)=>{
- console.log(term)
   try{
     return{type:'FILTER_CUSTOMER',payload:term}
   }
@@ -172,6 +171,62 @@ export const clearCustomerFilter = () =>{
      console.log(err);
    }
 }
+
+export const addCustomer =  (customer) =>{
+ 
+  return async(dispatch) =>{
+    try{
+      const response = await axios.post(`/api/customers`,customer);
+      dispatch({type:'ADD_CUSTOMERS',payload:response.data})
+    
+      return response.status;
+      
+    }
+    catch(err)
+    {
+      console.log(err);
+    }
+  }
+  
+}
+
+ export const modifyCustomer = (customer) =>{
+  
+   return async(dispatch) =>{
+
+    try{
+   
+    const response = await axios.put(`/api/edit_customers`,customer)
+   
+    
+    dispatch({type:"EDIT_CUSTOMER",payload:response.data})
+   return response.status;
+      
+   }
+   catch(err)
+   {
+    return{type:'ERROR_CUSTOMER',payload:err}
+   }
+   }
+ }
+ export const deleteCustomer = (customerId) =>{
+   
+   return async(dispatch) =>{
+     try{
+        const response = await axios.delete(`/api/delete_customer/${customerId}`)
+       dispatch({type:'DELETE_CUSTOMER',payload:response.data})
+       return response.status;
+      }
+     catch(err)
+     {
+       console.log(err);
+       return{type:'ERROR_CUSTOMER',payload:err}
+     }
+   }
+ }
+  
+
+
 export const fetchInvoices  = () =>{
   return async(dispatch) =>{
     try{
@@ -195,3 +250,4 @@ export const filterInvoices = (status) =>{
     }
   
 }
+

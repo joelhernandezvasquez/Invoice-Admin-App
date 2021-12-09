@@ -6,7 +6,8 @@ import UseScreenSize from '../Hooks/UseScreenSize';
 import { connect } from 'react-redux';
 import { filterInvoices } from '../../actions';
 
-const HeaderList = ({routingName,link,count,filterInvoices}) => {
+
+const HeaderList = ({routingName,link,count,filterInvoices,overlay}) => {
   
   const [toggleFilterOptions,toogleFilter] = useToogle(false);
   const [selectedOption,setSelectedOption] = useState(null);
@@ -118,6 +119,7 @@ const HeaderList = ({routingName,link,count,filterInvoices}) => {
 
               )}
               
+            
               <Link to={link} className="create-btn">
                 <div className="btn-container">
                     <div className="plus-sign-container">
